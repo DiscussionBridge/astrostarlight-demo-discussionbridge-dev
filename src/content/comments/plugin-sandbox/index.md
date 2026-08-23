@@ -58,8 +58,8 @@ discussionSummary: |
   failed candidate is preserved as immutable evidence and superseded; it is
   never silently retagged or rewritten.
 
-discussionSourceHash: "668373a224dfb3f0478eefbcc0dc4e53cc85da72cb3d11d9112655897db240ef"
-discussionLastSyncedAt: "2026-08-23T20:46:32.175Z"
+discussionSourceHash: "768e65a0ad629e7dc2540974214591a15c51004f6fc0802c74997266879636e4"
+discussionLastSyncedAt: "2026-08-23T20:58:01.631Z"
 ---
 
 ## Test purpose
