@@ -4,7 +4,7 @@ description: "An end-to-end sandbox demonstration of forum-authorized companion-
 date: "2026-08-04"
 discussionCommentsDisplay: "fullInteractive"
 discourseTopicId: 10
-discourseTopicUrl: "https://sandbox-forum.discussionbridge.dev/t/10"
+discourseTopicUrl: "https://sandbox-forum.discussionbridge.dev/t/plugin-controlled-sandbox-comments/10"
 discussionSourceMode: "astro-managed"
 discussionSync: true
 discussionUnlisted: true
@@ -59,6 +59,8 @@ discussionSummary: |
   never silently retagged or rewritten.
 
   </div>
+discussionSourceHash: "668373a224dfb3f0478eefbcc0dc4e53cc85da72cb3d11d9112655897db240ef"
+discussionLastSyncedAt: "2026-08-23T20:46:32.175Z"
 ---
 
 ## Test purpose
