@@ -9,7 +9,7 @@ discussionSourceMode: "astro-managed"
 discussionSync: true
 discussionUnlisted: true
 discussionSummary: |
-  <div data-theme-toc="true">
+  <div data-theme-toc="true"></div>
 
   ## Test purpose
 
@@ -58,7 +58,6 @@ discussionSummary: |
   failed candidate is preserved as immutable evidence and superseded; it is
   never silently retagged or rewritten.
 
-  </div>
 discussionSourceHash: "668373a224dfb3f0478eefbcc0dc4e53cc85da72cb3d11d9112655897db240ef"
 discussionLastSyncedAt: "2026-08-23T20:46:32.175Z"
 ---
