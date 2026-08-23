@@ -11,7 +11,13 @@ const companionTopicFields = z.object({
   discussionSourceAuthorUsername: z.string().optional(),
   discussionSourceAuthorName: z.string().optional(),
   discussionSourceCategoryId: z.number().int().positive().optional(),
+  discussionSourceMode: z
+    .enum(["astro-managed", "discourse-managed", "discourse-imported"])
+    .optional(),
+  discussionSummary: z.string().optional(),
   discussionSync: z.boolean().optional(),
+  discussionListed: z.boolean().optional(),
+  discussionUnlisted: z.boolean().optional(),
 });
 
 const lanePostSchema = companionTopicFields.extend({
