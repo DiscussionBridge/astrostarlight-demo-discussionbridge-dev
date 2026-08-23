@@ -3,6 +3,11 @@ import starlight from "@astrojs/starlight";
 import discussionBridge from "astro-discussion-bridge";
 
 const connectSandbox = process.env.DISCUSSIONBRIDGE_SANDBOX_CONNECT === "1";
+const connectDev = process.env.DISCUSSIONBRIDGE_DEV_CONNECT === "1";
+
+if (connectSandbox && connectDev) {
+  throw new Error("Choose either the sandbox or dev DiscussionBridge connection window, not both.");
+}
 
 export default defineConfig({
   site: "https://astrostarlight.demo.discussionbridge.dev",
@@ -39,8 +44,21 @@ export default defineConfig({
         refreshEndpoint: "/api/discourse/topics/{topicId}.json",
       },
       publishOnBuild: {
-        enabled: connectSandbox,
-        lanes: connectSandbox ? [
+        enabled: connectSandbox || connectDev,
+        lanes: connectDev ? [
+          {
+            name: "plugin-dev",
+            docsDir: "src/content/comments/plugin-dev",
+            routeBase: "comments/plugin-dev",
+            discourseUrl: "https://dev-forum.discussionbridge.dev",
+            controlledCreation: {
+              connectionIdEnv: "DISCUSSIONBRIDGE_DEV_CONNECTION_ID",
+              connectionSecretEnv: "DISCUSSIONBRIDGE_DEV_CONNECTION_SECRET",
+              lane: "comments",
+              visibility: "listed",
+            },
+          },
+        ] : connectSandbox ? [
           {
             name: "plugin-sandbox",
             docsDir: "src/content/comments/plugin-sandbox",
