@@ -6,9 +6,9 @@ This repository owns the Astro and Starlight DiscussionBridge demo. It builds
 and deploys independently as a Cloudflare Worker with static assets.
 
 The pinned adapter artifact is
-`vendor/astro-discussion-bridge-0.1.0-alpha.20260824.2.tgz`. It contains 67
-members, is 108,671 bytes, and its SHA-256 is
-`7bb85f7658c5391b23ebf914cbe6fbac1bfa28c99bd7f64b5c7c51ad2e39940d`.
+`vendor/astro-discussion-bridge-0.1.0-alpha.20260824.3.tgz`. It contains 67
+members, is 110,908 bytes, and its SHA-256 is
+`d800c2802f1a0818bc9a176899490d768960e09a06c9ae9ecc0efe4410e3cc53`.
 It supersedes the Alpha.5-only `0.1.0` artifact with the qualified security,
 trust, and packaged-browser correction candidate. Publication and release
 acceptance remain separate gates.
