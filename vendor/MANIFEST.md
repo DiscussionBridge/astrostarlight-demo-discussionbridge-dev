@@ -2,14 +2,14 @@
 
 | File | Role | SHA-256 | Length |
 | --- | --- | --- | ---: |
-| `astro-discussion-bridge-0.1.0-alpha.20260824.1.tgz` | Qualified Astro adapter prerelease input | `2aac43d6c945c3f67c4b5542271ed1cd99b534250fb14d62af559467fa1fe8a6` | 108594 |
+| `astro-discussion-bridge-0.1.0-alpha.20260824.2.tgz` | Qualified Astro adapter prerelease input | `7bb85f7658c5391b23ebf914cbe6fbac1bfa28c99bd7f64b5c7c51ad2e39940d` | 108671 |
 
-The archive contains 67 members (460,374 unpacked bytes), has npm SHA-1
-`282de10fbc831802fc072f41c084bebccb6a7a1c`, and npm integrity
-`sha512-Sg2AX0ii87JZ87nDwfPd+vweSWNFGsuHjZFJHLKCZ4Dfwe4kZx3ZuDrJXTQVXhzxNV8BGEceVVfMpBPlKgU8aw==`.
+The archive contains 67 members (460,795 unpacked bytes), has npm SHA-1
+`1f6870cf280a59e7a9ad1bbec27dfe3584616a39`, and npm integrity
+`sha512-rG0rNd9swhl/YsquWtzqBhWG5kiN+0DjwLmsNqUyAmy8DXsGNQgdhSKIzENFuUCG2v8/6qpUa2FGq4FjFFJ6ew==`.
 
 It is bound to immutable adapter source commit
-`d6d158c491e8e4a7b99735eedcb2cb64c816a690`. A fresh `npm pack` from that
+`2efe24763272fdc747d15cb8ed6813065e60807c`. A fresh `npm pack` from that
 commit reproduced the exact SHA-256, npm SHA-1/integrity, member count, and
 packed/unpacked sizes above. This manifest does not claim publication or
 release acceptance.
