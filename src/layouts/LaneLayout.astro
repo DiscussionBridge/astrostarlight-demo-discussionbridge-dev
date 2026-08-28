@@ -3,10 +3,9 @@ import Discussion from "astro-discussion-bridge/Discussion.astro";
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
 
 interface Props {
-  commentsDisplay?: "simple" | "full" | "fullInteractive";
+  commentsDisplay?: "fullInteractive" | string;
   date: Date;
   description: string;
-  embedUrl?: string;
   headings?: Array<{ depth: number; slug: string; text: string }>;
   laneLabel: string;
   title: string;
@@ -33,13 +32,14 @@ const formattedDate = new Intl.DateTimeFormat("en", {
   <article>
     <slot />
   </article>
-  <Discussion
-    display={Astro.props.commentsDisplay}
-    embedUrl={Astro.props.embedUrl}
-    heading="Discussion"
-    topicId={Astro.props.topicId}
-    topicUrl={Astro.props.topicUrl}
-  />
+  {Astro.props.commentsDisplay === "fullInteractive" && Astro.props.topicUrl && (
+    <Discussion
+      discourseUrl={new URL(Astro.props.topicUrl).origin}
+      heading="Discussion"
+      topicId={Astro.props.topicId}
+      topicUrl={Astro.props.topicUrl}
+    />
+  )}
 </StarlightPage>
 
 <style>

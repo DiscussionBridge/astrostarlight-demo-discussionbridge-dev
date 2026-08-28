@@ -2,14 +2,13 @@
 
 | File | Role | SHA-256 | Length |
 | --- | --- | --- | ---: |
-| `astro-discussion-bridge-0.1.0-alpha.20260824.3.tgz` | Qualified Astro adapter prerelease input | `d800c2802f1a0818bc9a176899490d768960e09a06c9ae9ecc0efe4410e3cc53` | 110908 |
+| `astro-discussion-bridge-0.1.0-alpha.20260828.1.tgz` | Reduced controlled-creation/fullInteractive prerelease input | `219501409b108e6a00426b811bd29ebe426df62c20999c301c5191df4f81a135` | 15189 |
 
-The archive contains 67 members (472,774 unpacked bytes), has npm SHA-1
-`5e8f1fc384b2b123a2de86483d0bf58de591bfc7`, and npm integrity
-`sha512-CPdxDdkUr6SPTtA+MQj2QoFJX628X0T3X0aXVs544AatbtvEINFEzHnMI4aJcSf6SfuUNcqDCV0oe+2lNp1x0g==`.
+The archive contains 16 members (56,863 unpacked bytes), has npm SHA-1
+`509a80fc281bee2b0031f8588965fc89fedcb002`, and npm integrity
+`sha512-mPVjgiGOV9krykNgK5AywAIYJlbvXy0/vJzSkenbB+eGney0SFUmnqmoytVowoGijIs6SGJdCbR9osM2aeEoZQ==`.
 
-It is bound to immutable adapter source commit
-`f92e0dad18091353133288dcc05074fbd6e21675`. A fresh `npm pack` from that
-commit reproduced the exact SHA-256, npm SHA-1/integrity, member count, and
-packed/unpacked sizes above. This manifest does not claim publication or
-release acceptance.
+It is generated from immutable reduced adapter source commit
+`aff026b485f62c05b0c9c17564d239448f29cdc1` (tree
+`0dbc23ff2688768b80f3d3bcb87b673005b267ff`). This manifest does not claim
+publication or release acceptance.
