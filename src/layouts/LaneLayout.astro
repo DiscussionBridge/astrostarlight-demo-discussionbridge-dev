@@ -1,9 +1,11 @@
 ---
 import Discussion from "astro-discussion-bridge/Discussion.astro";
+import FromDiscourse from "astro-discussion-bridge/FromDiscourse.astro";
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
 
 interface Props {
   commentsDisplay?: "fullInteractive" | string;
+  fromDiscourse?: boolean;
   date: Date;
   description: string;
   headings?: Array<{ depth: number; slug: string; text: string }>;
@@ -11,6 +13,7 @@ interface Props {
   title: string;
   topicId?: number | string;
   topicUrl?: string;
+  resourceId?: string;
 }
 
 const formattedDate = new Intl.DateTimeFormat("en", {
@@ -38,6 +41,12 @@ const formattedDate = new Intl.DateTimeFormat("en", {
       heading="Discussion"
       topicId={Astro.props.topicId}
       topicUrl={Astro.props.topicUrl}
+    />
+  )}
+  {Astro.props.fromDiscourse && Astro.props.resourceId && (
+    <FromDiscourse
+      discourseUrl="https://sandbox-forum.discussionbridge.dev"
+      resourceId={Astro.props.resourceId}
     />
   )}
 </StarlightPage>

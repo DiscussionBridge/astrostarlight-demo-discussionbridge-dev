@@ -3,8 +3,6 @@ title: "Plugin-Controlled Sandbox Comments"
 description: "An end-to-end sandbox demonstration of forum-authorized companion-topic creation."
 date: "2026-08-04"
 discussionCommentsDisplay: "fullInteractive"
-discourseTopicId: 10
-discourseTopicUrl: "https://sandbox-forum.discussionbridge.dev/t/plugin-controlled-sandbox-comments/10"
 discussionSourceMode: "astro-managed"
 discussionSync: true
 discussionUnlisted: true
@@ -58,8 +56,9 @@ discussionSummary: |
   failed candidate is preserved as immutable evidence and superseded; it is
   never silently retagged or rewritten.
 
-discussionSourceHash: "768e65a0ad629e7dc2540974214591a15c51004f6fc0802c74997266879636e4"
-discussionLastSyncedAt: "2026-08-23T20:58:01.631Z"
+discussionbridgeResourceId: "9d03ae0b-a657-45b4-94fb-fb7906c156be"
+discourseTopicId: "18"
+discourseTopicUrl: "https://sandbox-forum.discussionbridge.dev/t/plugin-controlled-sandbox-comments/18"
 ---
 
 ## Test purpose
@@ -79,9 +78,9 @@ mapping instead of creating another topic.
 
 ## Mapping stability
 
-This page reuses the accepted sandbox mapping and topic 10. Rebuilding or
-refreshing the Astro page must resolve that mapping rather than create a second
-topic or change its forum-owned policy.
+This page owns an Alpha Bridge Record. Rebuilding must resolve the same stable
+resource and topic rather than create a second topic or change forum-owned
+policy.
 
 ## Visibility boundary
 

@@ -4,6 +4,7 @@ import { docsLoader } from "@astrojs/starlight/loaders";
 import { docsSchema } from "@astrojs/starlight/schema";
 
 const companionTopicFields = z.object({
+  discussionbridgeResourceId: z.string().uuid().optional(),
   discourseTopicId: z.union([z.string(), z.number()]).optional(),
   discourseTopicUrl: z.string().url().optional(),
   discussionCommentsDisplay: z.literal("fullInteractive").optional(),
@@ -15,6 +16,7 @@ const companionTopicFields = z.object({
     .optional(),
   discussionSummary: z.string().optional(),
   discussionSync: z.boolean().optional(),
+  discussionFromDiscourse: z.boolean().optional(),
   discussionListed: z.boolean().optional(),
   discussionUnlisted: z.boolean().optional(),
 });
