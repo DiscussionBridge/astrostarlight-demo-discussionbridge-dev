@@ -6,8 +6,7 @@ import { docsSchema } from "@astrojs/starlight/schema";
 const companionTopicFields = z.object({
   discourseTopicId: z.union([z.string(), z.number()]).optional(),
   discourseTopicUrl: z.string().url().optional(),
-  discussionEmbedUrl: z.string().url().optional(),
-  discussionCommentsDisplay: z.enum(["simple", "full", "fullInteractive"]).optional(),
+  discussionCommentsDisplay: z.literal("fullInteractive").optional(),
   discussionSourceAuthorUsername: z.string().optional(),
   discussionSourceAuthorName: z.string().optional(),
   discussionSourceCategoryId: z.number().int().positive().optional(),

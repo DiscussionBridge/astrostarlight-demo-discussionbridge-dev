@@ -17,3 +17,14 @@ test("lane pages pass rendered Markdown headings to StarlightPage", async () => 
     assert.match(route, /headings=\{headings\}/);
   }
 });
+
+test("the public consumer advertises only the retained fullInteractive comments mode", async () => {
+  const schema = await readFile(new URL("../src/content.config.ts", import.meta.url), "utf8");
+  const index = await readFile(new URL("../src/pages/comments/index.astro", import.meta.url), "utf8");
+
+  assert.match(schema, /discussionCommentsDisplay: z\.literal\("fullInteractive"\)/);
+  assert.doesNotMatch(schema, /discussionEmbedUrl|z\.enum\(\["simple", "full"/);
+  assert.match(index, /comments-only.*fullInteractive/s);
+  await assert.rejects(() => readFile(new URL("../src/content/comments/simple.md", import.meta.url)));
+  await assert.rejects(() => readFile(new URL("../src/content/comments/full.md", import.meta.url)));
+});

@@ -10,11 +10,11 @@ const posts = (await getCollection("comments")).sort(
 <StarlightPage
   frontmatter={{
     title: "Comments Mode Demos",
-    description: "Side-by-side routes for testing simple, full, and fullInteractive comment rendering.",
+    description: "Mapped comments-only fullInteractive routes backed by DiscussionBridge.",
     editUrl: false,
   }}
 >
-  <p>Side-by-side routes for testing simple, full, and fullInteractive comment rendering.</p>
+  <p>Mapped comments-only <code>fullInteractive</code> routes backed by DiscussionBridge.</p>
   <ul>
     {posts.map((entry) => (
       <li><a href={`/comments/${entry.id}/`}>{entry.data.title}</a></li>
