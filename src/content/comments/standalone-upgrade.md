@@ -2,8 +2,12 @@
 title: "Standalone-to-Bridge Upgrade"
 description: "Begin with plugin-free Discourse comments, then adopt the same discussion into The Bridge without creating a duplicate topic."
 date: "2026-08-30"
-discussionCommentsDisplay: "full"
-discussionSync: false
+discussionCommentsDisplay: "fullInteractive"
+discussionSync: true
+discourseTopicId: "18"
+discourseTopicUrl: "https://bridge.demo.discussionbridge.dev/t/standalone-to-bridge-upgrade-discussionbridge-for-astro/18"
+discussionbridgeExternalId: "astro-page:3664fb85513adbb8b7646913e17d2fd619e569fccbb47ce294b7f4d9c40afba8"
+discussionbridgeResourceId: "858d81eb-65f2-424a-a8a0-cb9c32fc8481"
 ---
 
 ## Begin standalone
