@@ -40,7 +40,7 @@ test("the Astro Alpha profile binds distinct To records and one server-rendered 
 
   assert.equal(
     packageJson.dependencies["astro-discussion-bridge"],
-    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260830.2.tgz",
+    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260830.3.tgz",
   );
   assert.match(toPage, /discussionbridgeResourceId: "[0-9a-f-]{36}"/);
   assert.match(toPage, /discourseTopicId: "[1-9][0-9]*"/);
@@ -57,4 +57,16 @@ test("the Astro Alpha profile binds distinct To records and one server-rendered 
   assert.match(layout, /https:\/\/bridge\.demo\.discussionbridge\.dev/);
   assert.doesNotMatch(layout, /sandbox-forum\.discussionbridge\.dev/);
   assert.doesNotMatch(`${layout}\n${toPage}\n${fromPage}`, /dbc_f1cb2cb232f25584e8a1c5c9|X-DiscussionBridge-Secret/);
+});
+
+test("the authored demo supplies stable platform identities and one primary author", async () => {
+  const authoredPage = await readFile(
+    new URL("../src/content/comments/authored.md", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(authoredPage, /id: "astro:phil"/);
+  assert.match(authoredPage, /id: "astro:discussionbridge-team"/);
+  assert.match(authoredPage, /primaryAuthor: "astro:phil"/);
+  assert.doesNotMatch(authoredPage, /discourseUsername|connectionSecret/);
 });

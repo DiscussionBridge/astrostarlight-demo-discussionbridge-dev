@@ -4,6 +4,23 @@ import { docsLoader } from "@astrojs/starlight/loaders";
 import { docsSchema } from "@astrojs/starlight/schema";
 
 const companionTopicFields = z.object({
+  authors: z
+    .union([
+      z.object({
+        id: z.string().min(1).max(255),
+        name: z.string().min(1).max(200),
+        profileUrl: z.string().url().optional(),
+      }),
+      z.array(
+        z.object({
+          id: z.string().min(1).max(255),
+          name: z.string().min(1).max(200),
+          profileUrl: z.string().url().optional(),
+        }),
+      ).min(1).max(20),
+    ])
+    .optional(),
+  primaryAuthor: z.string().min(1).max(255).optional(),
   discussionbridgeExternalId: z.string().regex(/^astro-page:[0-9a-f]{64}$/).optional(),
   discussionbridgeResourceId: z.string().uuid().optional(),
   discourseTopicId: z.union([z.string(), z.number()]).optional(),
