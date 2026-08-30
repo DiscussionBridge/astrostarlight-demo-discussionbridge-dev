@@ -35,11 +35,12 @@ const formattedDate = new Intl.DateTimeFormat("en", {
   <article>
     <slot />
   </article>
-  {Astro.props.commentsDisplay && Astro.props.topicUrl && (
+  {Astro.props.commentsDisplay && (
     <Discussion
-      discourseUrl={new URL(Astro.props.topicUrl).origin}
+      discourseUrl={Astro.props.topicUrl ? new URL(Astro.props.topicUrl).origin : undefined}
       display={Astro.props.commentsDisplay}
       heading="Discussion"
+      sourceUrl={Astro.url.href}
       topicId={Astro.props.topicId}
       topicUrl={Astro.props.topicUrl}
     />

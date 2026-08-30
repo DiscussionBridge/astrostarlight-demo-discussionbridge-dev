@@ -2,13 +2,13 @@
 
 | File | Role | SHA-256 | Length |
 | --- | --- | --- | ---: |
-| `astro-discussion-bridge-0.1.0-alpha.20260830.3.tgz` | Two-direction Bridge Record, durable page identity, source authorship, and simple/full/fullInteractive Astro input | `a55c2a93fdfc8ecd823850067c7ee2e57ca0a2a459a72a1c728d8c9ab1f873ca` | 20779 |
+| `astro-discussion-bridge-0.1.0-alpha.20260830.4.tgz` | Standalone simple/full comments plus optional Bridge adoption, two-direction Bridge Records, durable page identity, and source authorship | `6d35f0260ec4f98deab345c27bafcdb15024f464b062364fb593a2ce72b00226` | 21472 |
 
-The archive contains 21 members (82,997 unpacked bytes), has npm SHA-1
-`272fcd2c76bda643b9dc9e4fa9f00b6d576bff15`, and npm integrity
-`sha512-jkSCxUR5x6V2b2Uda14W5CGSC9TVZugmxbPEYkIDe6VhvOctxz2OYZlUTarufJ6BG9HPoLtknuXk61+JiANwIA==`.
+The archive contains 21 members (85,929 unpacked bytes), has npm SHA-1
+`bef1fc36217c8fd0ae4442508ce723e91c67c2a9`, and npm integrity
+`sha512-uFugzaCLfjWEbi4iOiH6coCgG0OBO/mPkVm69LRMVsAaemHT8FOKC5naP1XOZ9xzII8oWxaJMDq9vNKfaOU/gw==`.
 
 It is generated from immutable reduced adapter source commit
-`2c9b502e14a3ff0b47935500f694f496036d05cb` (tree
-`36ecda399e13734e4e2d2352947cabab1e036c23`). This manifest does not claim
+`4b7d18be29f6efac767f65188051c41554aed03e` (tree
+`7fabd6e5086f73fdf8ec04e726639eca0a8da56b`). This manifest does not claim
 publication or release acceptance.

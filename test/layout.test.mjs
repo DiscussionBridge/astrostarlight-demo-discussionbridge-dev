@@ -40,7 +40,7 @@ test("the Astro Alpha profile binds distinct To records and one server-rendered 
 
   assert.equal(
     packageJson.dependencies["astro-discussion-bridge"],
-    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260830.3.tgz",
+    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260830.4.tgz",
   );
   assert.match(toPage, /discussionbridgeResourceId: "[0-9a-f-]{36}"/);
   assert.match(toPage, /discourseTopicId: "[1-9][0-9]*"/);
@@ -57,6 +57,26 @@ test("the Astro Alpha profile binds distinct To records and one server-rendered 
   assert.match(layout, /https:\/\/bridge\.demo\.discussionbridge\.dev/);
   assert.doesNotMatch(layout, /sandbox-forum\.discussionbridge\.dev/);
   assert.doesNotMatch(`${layout}\n${toPage}\n${fromPage}`, /dbc_f1cb2cb232f25584e8a1c5c9|X-DiscussionBridge-Secret/);
+});
+
+test("standalone full comments can begin without a Bridge mapping", async () => {
+  const laneLayout = await readFile(new URL("../src/layouts/LaneLayout.astro", import.meta.url), "utf8");
+  const markdownLayout = await readFile(
+    new URL("../src/components/MarkdownContent.astro", import.meta.url),
+    "utf8",
+  );
+  const adoptionPage = await readFile(
+    new URL("../src/content/comments/standalone-upgrade.md", import.meta.url),
+    "utf8",
+  );
+
+  assert.doesNotMatch(laneLayout, /commentsDisplay && Astro\.props\.topicUrl/);
+  assert.doesNotMatch(markdownLayout, /discussionCommentsDisplay && topicUrl/);
+  assert.match(laneLayout, /sourceUrl=\{Astro\.url\.href\}/);
+  assert.match(markdownLayout, /sourceUrl=\{Astro\.url\.href\}/);
+  assert.match(adoptionPage, /discussionCommentsDisplay: "full"/);
+  assert.match(adoptionPage, /discussionSync: false/);
+  assert.doesNotMatch(adoptionPage, /discussionbridgeResourceId|discourseTopicId|discourseTopicUrl/);
 });
 
 test("the authored demo supplies stable platform identities and one primary author", async () => {

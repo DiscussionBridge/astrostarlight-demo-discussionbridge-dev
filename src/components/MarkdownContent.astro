@@ -10,10 +10,11 @@ const topicUrl = entry.data.discussionUrl ?? entry.data.discourseTopicUrl;
 <DefaultMarkdownContent>
   <slot />
 </DefaultMarkdownContent>
-{entry.data.discussionCommentsDisplay && topicUrl && (
+{entry.data.discussionCommentsDisplay && (
   <Discussion
-    discourseUrl={new URL(topicUrl).origin}
+    discourseUrl={topicUrl ? new URL(topicUrl).origin : undefined}
     display={entry.data.discussionCommentsDisplay}
+    sourceUrl={Astro.url.href}
     topicId={topicId}
     topicUrl={topicUrl}
   />
