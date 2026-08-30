@@ -1,9 +1,9 @@
 ---
 title: "Full Interactive Comments Mode"
-description: "A demo route for Discourse's full app iframe embed."
-date: "2026-07-17"
-discourseTopicId: 33
-discourseTopicUrl: "https://forum.discussionbridge.dev/t/full-comments-mode/33"
+description: "The plugin-backed, mapped comments-only Discourse experience."
+date: "2026-08-29"
+discourseTopicId: 18
+discourseTopicUrl: "https://sandbox-forum.discussionbridge.dev/t/plugin-controlled-sandbox-comments/18"
 discussionCommentsDisplay: "fullInteractive"
 discussionSync: false
 ---
@@ -12,9 +12,13 @@ discussionSync: false
 
 This page uses `discussionCommentsDisplay: "fullInteractive"`.
 
-It hands the embedded area back to Discourse as a full app iframe. When Discourse embedding allows it, logged-in users can use Discourse-native interactions such as reply, like, quote, and moderation flows inside the embedded experience.
+It hands the embedded area back to Discourse as a full app iframe. Logged-in
+users can use Discourse-native interactions such as reply, like, quote, and
+moderation flows inside the embedded experience.
 
-This historical test topic is displayed without managing the Discourse companion topic.
+Unlike the plugin-free modes, this page uses a forum-authorized Bridge Record
+and the receiver plugin's mapped comments-only presentation. The same mapped
+topic also powers the controlled-creation stress-test route.
 
 For product teams, the appeal of this mode is that the publication and the conversation can keep their own strengths. Astro keeps the article fast, structured, versioned, and pleasant to read. Discourse keeps identity, trust levels, notifications, moderation, quoting, reactions, and the long-running social context that makes a community useful after the original page has shipped.
 

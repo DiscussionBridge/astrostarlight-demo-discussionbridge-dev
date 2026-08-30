@@ -4,7 +4,7 @@ import FromDiscourse from "astro-discussion-bridge/FromDiscourse.astro";
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
 
 interface Props {
-  commentsDisplay?: "fullInteractive" | string;
+  commentsDisplay?: "simple" | "full" | "fullInteractive";
   fromDiscourse?: boolean;
   date: Date;
   description: string;
@@ -35,9 +35,10 @@ const formattedDate = new Intl.DateTimeFormat("en", {
   <article>
     <slot />
   </article>
-  {Astro.props.commentsDisplay === "fullInteractive" && Astro.props.topicUrl && (
+  {Astro.props.commentsDisplay && Astro.props.topicUrl && (
     <Discussion
       discourseUrl={new URL(Astro.props.topicUrl).origin}
+      display={Astro.props.commentsDisplay}
       heading="Discussion"
       topicId={Astro.props.topicId}
       topicUrl={Astro.props.topicUrl}

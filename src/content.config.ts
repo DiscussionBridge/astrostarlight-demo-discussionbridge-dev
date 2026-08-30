@@ -7,7 +7,7 @@ const companionTopicFields = z.object({
   discussionbridgeResourceId: z.string().uuid().optional(),
   discourseTopicId: z.union([z.string(), z.number()]).optional(),
   discourseTopicUrl: z.string().url().optional(),
-  discussionCommentsDisplay: z.literal("fullInteractive").optional(),
+  discussionCommentsDisplay: z.enum(["simple", "full", "fullInteractive"]).optional(),
   discussionSourceAuthorUsername: z.string().optional(),
   discussionSourceAuthorName: z.string().optional(),
   discussionSourceCategoryId: z.number().int().positive().optional(),

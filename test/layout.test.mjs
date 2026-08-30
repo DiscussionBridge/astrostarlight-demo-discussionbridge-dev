@@ -18,15 +18,17 @@ test("lane pages pass rendered Markdown headings to StarlightPage", async () => 
   }
 });
 
-test("the public consumer advertises only the retained fullInteractive comments mode", async () => {
+test("the public consumer advertises all three intentional comments modes", async () => {
   const schema = await readFile(new URL("../src/content.config.ts", import.meta.url), "utf8");
   const index = await readFile(new URL("../src/pages/comments/index.astro", import.meta.url), "utf8");
 
-  assert.match(schema, /discussionCommentsDisplay: z\.literal\("fullInteractive"\)/);
-  assert.doesNotMatch(schema, /discussionEmbedUrl|z\.enum\(\["simple", "full"/);
-  assert.match(index, /comments-only.*fullInteractive/s);
-  await assert.rejects(() => readFile(new URL("../src/content/comments/simple.md", import.meta.url)));
-  await assert.rejects(() => readFile(new URL("../src/content/comments/full.md", import.meta.url)));
+  assert.match(schema, /discussionCommentsDisplay: z\.enum\(\["simple", "full", "fullInteractive"\]\)/);
+  assert.doesNotMatch(schema, /discussionEmbedUrl/);
+  assert.match(index, /simple.*full.*fullInteractive/s);
+  const simple = await readFile(new URL("../src/content/comments/simple.md", import.meta.url), "utf8");
+  const full = await readFile(new URL("../src/content/comments/full.md", import.meta.url), "utf8");
+  assert.match(simple, /discussionCommentsDisplay: "simple"/);
+  assert.match(full, /discussionCommentsDisplay: "full"/);
 });
 
 test("the Astro Alpha profile binds one To record and one server-rendered From record", async () => {
@@ -37,7 +39,7 @@ test("the Astro Alpha profile binds one To record and one server-rendered From r
 
   assert.equal(
     packageJson.dependencies["astro-discussion-bridge"],
-    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260829.2.tgz",
+    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260830.1.tgz",
   );
   assert.match(toPage, /discussionbridgeResourceId: "9d03ae0b-a657-45b4-94fb-fb7906c156be"/);
   assert.match(toPage, /discourseTopicId: "18"/);

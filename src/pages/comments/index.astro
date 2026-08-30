@@ -10,11 +10,16 @@ const posts = (await getCollection("comments")).sort(
 <StarlightPage
   frontmatter={{
     title: "Comments Mode Demos",
-    description: "Mapped comments-only fullInteractive routes backed by DiscussionBridge.",
+    description: "Compare plugin-free simple and full comments with DiscussionBridge fullInteractive.",
     editUrl: false,
   }}
 >
-  <p>Mapped comments-only <code>fullInteractive</code> routes backed by DiscussionBridge.</p>
+  <p>
+    Compare all three supported Astro comment presentations. <code>simple</code>
+    and <code>full</code> work without installing the DiscussionBridge receiver
+    plugin. <code>fullInteractive</code> adds durable mapping and the enhanced
+    comments-only Discourse experience.
+  </p>
   <ul>
     {posts.map((entry) => (
       <li><a href={`/comments/${entry.id}/`}>{entry.data.title}</a></li>

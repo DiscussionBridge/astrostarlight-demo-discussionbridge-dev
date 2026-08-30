@@ -10,9 +10,10 @@ const topicUrl = entry.data.discussionUrl ?? entry.data.discourseTopicUrl;
 <DefaultMarkdownContent>
   <slot />
 </DefaultMarkdownContent>
-{entry.data.discussionCommentsDisplay === "fullInteractive" && topicUrl && (
+{entry.data.discussionCommentsDisplay && topicUrl && (
   <Discussion
     discourseUrl={new URL(topicUrl).origin}
+    display={entry.data.discussionCommentsDisplay}
     topicId={topicId}
     topicUrl={topicUrl}
   />
