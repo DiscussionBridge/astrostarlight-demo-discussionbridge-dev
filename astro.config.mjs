@@ -18,7 +18,19 @@ export default defineConfig({
           items: [
             { label: "Starlight Demo", link: "/" },
             { label: "Plain Markdown Demo", slug: "existing-md-page" },
-            { label: "Comments Mode Demos", link: "/comments/" },
+            {
+              label: "Comments & Bridge",
+              items: [
+                { label: "Choose a mode", link: "/comments/" },
+                { label: "Simple comments", link: "/comments/simple/" },
+                { label: "Full — Discourse Core", link: "/comments/full/" },
+                { label: "Standalone → The Bridge", link: "/comments/standalone-upgrade/" },
+                { label: "FullInteractive", link: "/comments/full-interactive/" },
+                { label: "Plugin-controlled", link: "/comments/plugin-bridge/" },
+                { label: "Source authorship", link: "/comments/authored/" },
+                { label: "From Discourse", link: "/comments/forum-roadmap/" },
+              ],
+            },
           ],
         },
         {

@@ -29,3 +29,15 @@ already owns the topic.
 The upgrade must retain the original topic, replies, and canonical page URL.
 It must not create a replacement topic or make an arbitrary forum topic
 claimable by an adapter.
+
+## What appears on the forum
+
+This topic began as a standard Discourse Core embed. With Discourse's default
+`embed_truncate` setting enabled, its forum first post shows an excerpt and a
+**Show more…** control for the complete rendered Astro page. Operators who
+disable that setting see the complete imported article immediately.
+
+After adoption, `fullInteractive` deliberately omits the forum first post from
+the comments frame because the source article is already visible above it. The
+direct forum topic retains the imported article and its Discourse-controlled
+truncate-or-show-all presentation.

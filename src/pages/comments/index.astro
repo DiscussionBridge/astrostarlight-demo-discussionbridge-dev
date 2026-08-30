@@ -20,6 +20,14 @@ const posts = (await getCollection("comments")).sort(
     plugin. <code>fullInteractive</code> adds durable mapping and the enhanced
     comments-only Discourse experience.
   </p>
+  <aside>
+    <strong>Discourse content display:</strong> Discourse Core enables
+    <code>embed_truncate</code> by default. A forum topic initially shows an
+    excerpt of the imported page with <strong>Show more…</strong> for the full
+    rendered article. A forum operator can disable that setting to show the
+    complete imported article immediately. DiscussionBridge does not silently
+    assume either operator choice.
+  </aside>
   <ul>
     {posts.map((entry) => (
       <li><a href={`/comments/${entry.id}/`}>{entry.data.title}</a></li>
@@ -30,4 +38,10 @@ const posts = (await getCollection("comments")).sort(
 <style>
   nav { display: flex; flex-wrap: wrap; gap: 1rem; margin-block: 1rem 2rem; }
   li { margin-block: 0.75rem; }
+  aside {
+    margin-block: 1.5rem;
+    border-inline-start: 0.25rem solid var(--sl-color-accent);
+    padding: 0.75rem 1rem;
+    background: var(--sl-color-gray-6);
+  }
 </style>

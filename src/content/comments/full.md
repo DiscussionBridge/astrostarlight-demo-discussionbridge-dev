@@ -21,3 +21,13 @@ This remains an important option for publishers who want the standard
 Discourse experience. Its styling and frame behavior are intentionally shown
 as-is—the integration limitations that prompted the enhanced plugin-backed
 mode should remain visible rather than being hidden from prospective users.
+
+## Imported article display
+
+Discourse Core enables `embed_truncate` by default. On the forum, the imported
+article therefore opens as an excerpt with **Show more…** available for the
+complete rendered page. A forum operator can disable that setting when the
+preferred default is to show the complete imported article immediately.
+
+This is a forum-wide Discourse presentation choice. It does not change which
+Astro page owns the discussion or whether DiscussionBridge is installed.

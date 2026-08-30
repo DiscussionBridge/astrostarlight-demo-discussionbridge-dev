@@ -3,6 +3,13 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const routeFiles = ["blog", "comments", "news", "releases"];
+const stockContentFiles = [
+  "src/content/blog/content-lanes.md",
+  "src/content/docs/index.md",
+  "src/content/docs/existing-md-page.md",
+  "src/content/news/content-lanes-live.md",
+  "src/content/releases/2_1.md",
+];
 
 test("lane pages pass rendered Markdown headings to StarlightPage", async () => {
   const layout = await readFile(new URL("../src/layouts/LaneLayout.astro", import.meta.url), "utf8");
@@ -18,9 +25,20 @@ test("lane pages pass rendered Markdown headings to StarlightPage", async () => 
   }
 });
 
+test("stock Astro content dogfoods canonical Core embeds without legacy bindings", async () => {
+  for (const path of stockContentFiles) {
+    const content = await readFile(new URL(`../${path}`, import.meta.url), "utf8");
+    assert.match(content, /discussionCommentsDisplay: "full"/);
+    assert.doesNotMatch(content, /forum\.discussionbridge\.dev/);
+    assert.doesNotMatch(content, /discussionSourceHash|discussionLastSyncedAt/);
+    assert.doesNotMatch(content, /discourseTopicId|discourseTopicUrl/);
+  }
+});
+
 test("the public consumer advertises all three intentional comments modes", async () => {
   const schema = await readFile(new URL("../src/content.config.ts", import.meta.url), "utf8");
   const index = await readFile(new URL("../src/pages/comments/index.astro", import.meta.url), "utf8");
+  const config = await readFile(new URL("../astro.config.mjs", import.meta.url), "utf8");
 
   assert.match(schema, /discussionCommentsDisplay: z\.enum\(\["simple", "full", "fullInteractive"\]\)/);
   assert.doesNotMatch(schema, /discussionEmbedUrl/);
@@ -29,6 +47,20 @@ test("the public consumer advertises all three intentional comments modes", asyn
   const full = await readFile(new URL("../src/content/comments/full.md", import.meta.url), "utf8");
   assert.match(simple, /discussionCommentsDisplay: "simple"/);
   assert.match(full, /discussionCommentsDisplay: "full"/);
+  assert.match(index, /embed_truncate/);
+  assert.match(index, /Show more…/);
+  assert.match(full, /show the complete imported article immediately/);
+  for (const route of [
+    "simple",
+    "full",
+    "standalone-upgrade",
+    "full-interactive",
+    "plugin-bridge",
+    "authored",
+    "forum-roadmap",
+  ]) {
+    assert.match(config, new RegExp(`/comments/${route}/`));
+  }
 });
 
 test("the Astro Alpha profile binds distinct To records and one server-rendered From record", async () => {
@@ -76,6 +108,8 @@ test("standalone full comments can upgrade through the exact existing topic", as
   assert.match(markdownLayout, /sourceUrl=\{Astro\.url\.href\}/);
   assert.match(adoptionPage, /discussionCommentsDisplay: "fullInteractive"/);
   assert.match(adoptionPage, /discussionSync: true/);
+  assert.match(adoptionPage, /embed_truncate/);
+  assert.match(adoptionPage, /Show more…/);
   assert.match(adoptionPage, /discussionbridgeExternalId: "astro-page:[0-9a-f]{64}"/);
   assert.match(adoptionPage, /discussionbridgeResourceId: "[0-9a-f-]{36}"/);
   assert.match(adoptionPage, /discourseTopicId: "18"/);
