@@ -3,8 +3,8 @@ title: "Full Comments Mode"
 description: "Plugin-free standard Discourse comments embedding."
 date: "2026-08-29"
 discussionCommentsDisplay: "full"
-discourseTopicId: 35
-discourseTopicUrl: "https://sandbox-forum.discussionbridge.dev/t/astro-full-comments-standard-discourse-embed/35"
+discourseTopicId: 13
+discourseTopicUrl: "https://bridge.demo.discussionbridge.dev/t/astro-full-comments-standard-discourse-embed/13"
 discussionSync: false
 ---
 

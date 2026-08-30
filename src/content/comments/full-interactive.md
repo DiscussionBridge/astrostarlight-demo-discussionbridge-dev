@@ -2,8 +2,8 @@
 title: "Full Interactive Comments Mode"
 description: "The plugin-backed, mapped comments-only Discourse experience."
 date: "2026-08-29"
-discourseTopicId: 18
-discourseTopicUrl: "https://sandbox-forum.discussionbridge.dev/t/plugin-controlled-sandbox-comments/18"
+discourseTopicId: 15
+discourseTopicUrl: "https://bridge.demo.discussionbridge.dev/t/plugin-controlled-bridge-comments/15"
 discussionCommentsDisplay: "fullInteractive"
 discussionSync: false
 ---

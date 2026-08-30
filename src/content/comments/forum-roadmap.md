@@ -2,7 +2,7 @@
 title: "Forum-Owned Astro Roadmap"
 description: "A From Discourse record rendered safely during the Astro build."
 date: "2026-08-29"
-discussionbridgeResourceId: "631e976c-9107-4a19-90ed-6221b54b1f0c"
+discussionbridgeResourceId: "c1a52d5b-ee88-4fab-a1c3-a36cf86f8563"
 discussionFromDiscourse: true
 ---
 

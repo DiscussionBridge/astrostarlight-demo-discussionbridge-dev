@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import discussionBridge from "astro-discussion-bridge";
 
-const connectSandbox = process.env.DISCUSSIONBRIDGE_SANDBOX_CONNECT === "1";
+const connectBridge = process.env.DISCUSSIONBRIDGE_BRIDGE_CONNECT === "1";
 
 export default defineConfig({
   site: "https://astrostarlight.demo.discussionbridge.dev",
@@ -31,7 +31,7 @@ export default defineConfig({
       ],
     }),
     discussionBridge({
-      discourseUrl: "https://sandbox-forum.discussionbridge.dev",
+      discourseUrl: "https://bridge.demo.discussionbridge.dev",
       siteUrl: "https://astrostarlight.demo.discussionbridge.dev",
       comments: {
         enabled: true,
@@ -40,10 +40,10 @@ export default defineConfig({
         embedViewportMaxHeight: "none",
       },
       publishOnBuild: {
-        enabled: connectSandbox,
-        docsDir: "src/content/comments/plugin-sandbox",
-        routeBase: "comments/plugin-sandbox",
-        lane: "astro-alpha",
+        enabled: connectBridge,
+        docsDir: "src/content/comments/plugin-bridge",
+        routeBase: "comments/plugin-bridge",
+        lane: "astro-demo",
         visibility: "unlisted",
       },
     }),

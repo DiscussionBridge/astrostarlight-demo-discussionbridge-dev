@@ -3,8 +3,8 @@ title: "Simple Comments Mode"
 description: "Plugin-free, bounded replies rendered in the Astro page."
 date: "2026-08-29"
 discussionCommentsDisplay: "simple"
-discourseTopicId: 34
-discourseTopicUrl: "https://sandbox-forum.discussionbridge.dev/t/astro-simple-comments-plugin-free/34"
+discourseTopicId: 12
+discourseTopicUrl: "https://bridge.demo.discussionbridge.dev/t/astro-simple-comments-plugin-free/12"
 discussionSync: false
 ---
 
