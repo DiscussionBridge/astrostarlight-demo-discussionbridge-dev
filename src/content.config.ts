@@ -14,7 +14,6 @@ const companionTopicFields = z.object({
   discussionSourceMode: z
     .enum(["astro-managed", "discourse-managed", "discourse-imported"])
     .optional(),
-  discussionSummary: z.string().optional(),
   discussionSync: z.boolean().optional(),
   discussionFromDiscourse: z.boolean().optional(),
   discussionListed: z.boolean().optional(),
