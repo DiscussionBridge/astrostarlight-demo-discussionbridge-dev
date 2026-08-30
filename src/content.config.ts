@@ -4,6 +4,7 @@ import { docsLoader } from "@astrojs/starlight/loaders";
 import { docsSchema } from "@astrojs/starlight/schema";
 
 const companionTopicFields = z.object({
+  discussionbridgeExternalId: z.string().regex(/^astro-page:[0-9a-f]{64}$/).optional(),
   discussionbridgeResourceId: z.string().uuid().optional(),
   discourseTopicId: z.union([z.string(), z.number()]).optional(),
   discourseTopicUrl: z.string().url().optional(),

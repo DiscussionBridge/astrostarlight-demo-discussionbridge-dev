@@ -31,18 +31,25 @@ test("the public consumer advertises all three intentional comments modes", asyn
   assert.match(full, /discussionCommentsDisplay: "full"/);
 });
 
-test("the Astro Alpha profile binds one To record and one server-rendered From record", async () => {
+test("the Astro Alpha profile binds distinct To records and one server-rendered From record", async () => {
   const packageJson = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
   const layout = await readFile(new URL("../src/layouts/LaneLayout.astro", import.meta.url), "utf8");
   const toPage = await readFile(new URL("../src/content/comments/plugin-bridge/index.md", import.meta.url), "utf8");
+  const interactivePage = await readFile(new URL("../src/content/comments/full-interactive.md", import.meta.url), "utf8");
   const fromPage = await readFile(new URL("../src/content/comments/forum-roadmap.md", import.meta.url), "utf8");
 
   assert.equal(
     packageJson.dependencies["astro-discussion-bridge"],
-    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260830.1.tgz",
+    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260830.2.tgz",
   );
   assert.match(toPage, /discussionbridgeResourceId: "[0-9a-f-]{36}"/);
   assert.match(toPage, /discourseTopicId: "[1-9][0-9]*"/);
+  assert.match(interactivePage, /discussionSync: true/);
+  assert.match(interactivePage, /discussionbridgeResourceId: "[0-9a-f-]{36}"/);
+  assert.notEqual(
+    /discourseTopicId: "?([1-9][0-9]*)"?/.exec(toPage)?.[1],
+    /discourseTopicId: "?([1-9][0-9]*)"?/.exec(interactivePage)?.[1],
+  );
   assert.match(fromPage, /discussionbridgeResourceId: "c1a52d5b-ee88-4fab-a1c3-a36cf86f8563"/);
   assert.match(fromPage, /discussionFromDiscourse: true/);
   assert.match(layout, /FromDiscourse/);

@@ -6,6 +6,7 @@ discussionCommentsDisplay: "fullInteractive"
 discussionSourceMode: "astro-managed"
 discussionSync: true
 discussionUnlisted: true
+discussionbridgeExternalId: "astro-page:fd210e1ad0958a5713304ba9c460b9933004fa42d70ccaf28beedaaa8f75a792"
 discussionbridgeResourceId: "b145249d-9f3e-439d-b33f-c03ab123eb2e"
 discourseTopicId: "15"
 discourseTopicUrl: "https://bridge.demo.discussionbridge.dev/t/plugin-controlled-bridge-comments/15"

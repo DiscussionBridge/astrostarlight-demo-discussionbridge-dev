@@ -2,10 +2,14 @@
 title: "Full Interactive Comments Mode"
 description: "The plugin-backed, mapped comments-only Discourse experience."
 date: "2026-08-29"
-discourseTopicId: 15
-discourseTopicUrl: "https://bridge.demo.discussionbridge.dev/t/plugin-controlled-bridge-comments/15"
 discussionCommentsDisplay: "fullInteractive"
-discussionSync: false
+discussionSourceMode: "astro-managed"
+discussionSync: true
+discussionUnlisted: true
+discussionbridgeExternalId: "astro-page:76bd40ec442558e24fd71a83246b89b004172d799c2e96e3ec8c6f9253ce590c"
+discussionbridgeResourceId: "f456b83d-9ab7-40ed-a226-1307264b9a31"
+discourseTopicId: "16"
+discourseTopicUrl: "https://bridge.demo.discussionbridge.dev/t/full-interactive-comments-mode/16"
 ---
 
 ## Full interactive mode

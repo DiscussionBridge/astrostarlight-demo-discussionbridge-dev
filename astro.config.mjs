@@ -41,8 +41,8 @@ export default defineConfig({
       },
       publishOnBuild: {
         enabled: connectBridge,
-        docsDir: "src/content/comments/plugin-bridge",
-        routeBase: "comments/plugin-bridge",
+        docsDir: "src/content/comments",
+        routeBase: "comments",
         lane: "astro-demo",
         visibility: "unlisted",
       },
