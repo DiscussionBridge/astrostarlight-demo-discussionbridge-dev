@@ -88,6 +88,7 @@ test("the Astro rich-content proof renders portable headings, Mermaid, math and 
   assert.match(importedRenderer, /code\.lang-mermaid/);
   assert.match(importedRenderer, /mermaid\.run/);
   assert.match(importedRenderer, /katex\.render/);
+  assert.match(importedRenderer, /querySelectorAll<HTMLParagraphElement>\("p"\)/);
   assert.ok(importedRenderer.includes("\\[math\\]"));
 });
 

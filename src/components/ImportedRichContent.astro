@@ -23,6 +23,19 @@
       await mermaid.run({ nodes: diagrams });
     }
 
+    for (const paragraph of root.querySelectorAll<HTMLParagraphElement>("p")) {
+      const match = paragraph.textContent?.trim().match(/^\[math\]([\s\S]*?)\[\/math\]$/);
+      if (!match) continue;
+      const target = document.createElement("div");
+      target.className = "discussionbridge-math";
+      katex.render(match[1].trim(), target, {
+        displayMode: true,
+        throwOnError: false,
+        strict: "warn",
+      });
+      paragraph.replaceWith(target);
+    }
+
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     const textNodes: Text[] = [];
     while (walker.nextNode()) {
