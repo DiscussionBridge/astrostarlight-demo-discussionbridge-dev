@@ -39,6 +39,7 @@ const formattedDate = new Intl.DateTimeFormat("en", {
     <FromDiscourse
       discourseUrl="https://bridge.demo.discussionbridge.dev"
       resourceId={Astro.props.resourceId}
+      showTopicLink={!Astro.props.commentsDisplay}
     />
   )}
   {Astro.props.commentsDisplay && (

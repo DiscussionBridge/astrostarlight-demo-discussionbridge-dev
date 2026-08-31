@@ -72,7 +72,7 @@ test("the Astro Alpha profile binds distinct To records and one server-rendered 
 
   assert.equal(
     packageJson.dependencies["astro-discussion-bridge"],
-    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260830.4.tgz",
+    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260830.5.tgz",
   );
   assert.match(toPage, /discussionbridgeResourceId: "[0-9a-f-]{36}"/);
   assert.match(toPage, /discourseTopicId: "[1-9][0-9]*"/);
@@ -89,6 +89,7 @@ test("the Astro Alpha profile binds distinct To records and one server-rendered 
   assert.match(fromPage, /discourseTopicUrl: "https:\/\/bridge\.demo\.discussionbridge\.dev\/t\/the-bridge-roadmap-for-astro\/14"/);
   assert.ok(layout.indexOf("<FromDiscourse") < layout.indexOf("<Discussion"));
   assert.match(layout, /FromDiscourse/);
+  assert.match(layout, /showTopicLink={!Astro\.props\.commentsDisplay}/);
   assert.match(layout, /resourceId=\{Astro\.props\.resourceId\}/);
   assert.match(layout, /https:\/\/bridge\.demo\.discussionbridge\.dev/);
   assert.doesNotMatch(layout, /sandbox-forum\.discussionbridge\.dev/);
