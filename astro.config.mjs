@@ -47,7 +47,7 @@ export default defineConfig({
       siteUrl: "https://astrostarlight.demo.discussionbridge.dev",
       comments: {
         enabled: true,
-        dynamicHeight: true,
+        dynamicHeight: false,
         embedMaxHeight: "none",
         embedViewportMaxHeight: "none",
       },

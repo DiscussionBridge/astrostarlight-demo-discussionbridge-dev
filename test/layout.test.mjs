@@ -72,7 +72,7 @@ test("the Astro Alpha profile binds distinct To records and one server-rendered 
 
   assert.equal(
     packageJson.dependencies["astro-discussion-bridge"],
-    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260830.5.tgz",
+    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260830.6.tgz",
   );
   assert.match(toPage, /discussionbridgeResourceId: "[0-9a-f-]{36}"/);
   assert.match(toPage, /discourseTopicId: "[1-9][0-9]*"/);
