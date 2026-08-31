@@ -11,3 +11,7 @@ discussionFromDiscourse: true
 This page demonstrates the reverse DiscussionBridge direction. Its forum-owned
 first post is retrieved with server-only credentials during the static build,
 sanitized, and emitted without exposing the Content Connection or its secret.
+
+This mode presents forum-owned content; it does not duplicate the forum's
+comments interface. Replies, membership and moderation remain in The Bridge,
+and the rendered record provides the link back to that discussion.
