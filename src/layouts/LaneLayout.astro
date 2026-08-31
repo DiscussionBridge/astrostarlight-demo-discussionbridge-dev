@@ -1,7 +1,9 @@
 ---
 import Discussion from "astro-discussion-bridge/Discussion.astro";
 import FromDiscourse from "astro-discussion-bridge/FromDiscourse.astro";
+import ImportedRichContent from "../components/ImportedRichContent.astro";
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import "katex/dist/katex.min.css";
 
 interface Props {
   commentsDisplay?: "simple" | "full" | "fullInteractive";
@@ -52,6 +54,7 @@ const formattedDate = new Intl.DateTimeFormat("en", {
       topicUrl={Astro.props.topicUrl}
     />
   )}
+  <ImportedRichContent />
 </StarlightPage>
 
 <style>

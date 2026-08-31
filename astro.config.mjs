@@ -1,4 +1,7 @@
 import { defineConfig } from "astro/config";
+import mermaid from "astro-mermaid";
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
 import starlight from "@astrojs/starlight";
 import discussionBridge from "astro-discussion-bridge";
 
@@ -6,7 +9,12 @@ const connectBridge = process.env.DISCUSSIONBRIDGE_BRIDGE_CONNECT === "1";
 
 export default defineConfig({
   site: "https://astrostarlight.demo.discussionbridge.dev",
+  markdown: {
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
+  },
   integrations: [
+    mermaid({ enableLog: false }),
     starlight({
       title: "DiscussionBridge for Astro",
       components: {
@@ -28,6 +36,7 @@ export default defineConfig({
                 { label: "FullInteractive", link: "/comments/full-interactive/" },
                 { label: "Plugin-controlled", link: "/comments/plugin-bridge/" },
                 { label: "Source authorship", link: "/comments/authored/" },
+                { label: "Rich content", link: "/comments/rich-content/" },
                 { label: "From Discourse", link: "/comments/forum-roadmap/" },
               ],
             },

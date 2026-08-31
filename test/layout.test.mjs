@@ -57,10 +57,38 @@ test("the public consumer advertises all three intentional comments modes", asyn
     "full-interactive",
     "plugin-bridge",
     "authored",
+    "rich-content",
     "forum-roadmap",
   ]) {
     assert.match(config, new RegExp(`/comments/${route}/`));
   }
+});
+
+test("the Astro rich-content proof renders portable headings, Mermaid, math and media", async () => {
+  const config = await readFile(new URL("../astro.config.mjs", import.meta.url), "utf8");
+  const importedRenderer = await readFile(
+    new URL("../src/components/ImportedRichContent.astro", import.meta.url),
+    "utf8",
+  );
+  const markdown = await readFile(
+    new URL("../src/content/comments/rich-content.md", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(config, /mermaid\(\{ enableLog: false \}\)/);
+  assert.match(config, /remarkPlugins: \[remarkMath\]/);
+  assert.match(config, /rehypePlugins: \[rehypeKatex\]/);
+  assert.match(markdown, /```mermaid/);
+  assert.match(markdown, /\$E = mc\^2\$/);
+  assert.match(markdown, /bridge-content-flow\.svg/);
+  assert.match(markdown, /discussionCommentsDisplay: "fullInteractive"/);
+  assert.match(markdown, /discussionSync: true/);
+  assert.match(markdown, /discussionbridgeResourceId: "[0-9a-f-]{36}"/);
+  assert.match(markdown, /discourseTopicId: "[1-9][0-9]*"/);
+  assert.match(importedRenderer, /code\.lang-mermaid/);
+  assert.match(importedRenderer, /mermaid\.run/);
+  assert.match(importedRenderer, /katex\.render/);
+  assert.ok(importedRenderer.includes("\\[math\\]"));
 });
 
 test("the Astro Alpha profile binds distinct To records and one server-rendered From record", async () => {
@@ -72,7 +100,7 @@ test("the Astro Alpha profile binds distinct To records and one server-rendered 
 
   assert.equal(
     packageJson.dependencies["astro-discussion-bridge"],
-    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260830.6.tgz",
+    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260830.7.tgz",
   );
   assert.match(toPage, /discussionbridgeResourceId: "[0-9a-f-]{36}"/);
   assert.match(toPage, /discourseTopicId: "[1-9][0-9]*"/);

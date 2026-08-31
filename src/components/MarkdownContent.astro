@@ -1,6 +1,7 @@
 ---
 import DefaultMarkdownContent from "@astrojs/starlight/components/MarkdownContent.astro";
 import Discussion from "astro-discussion-bridge/Discussion.astro";
+import "katex/dist/katex.min.css";
 
 const entry = Astro.locals.starlightRoute.entry;
 const topicId = entry.data.discourseTopicId;
