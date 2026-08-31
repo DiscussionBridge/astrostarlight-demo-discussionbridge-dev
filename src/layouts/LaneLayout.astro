@@ -35,6 +35,12 @@ const formattedDate = new Intl.DateTimeFormat("en", {
   <article>
     <slot />
   </article>
+  {Astro.props.fromDiscourse && Astro.props.resourceId && (
+    <FromDiscourse
+      discourseUrl="https://bridge.demo.discussionbridge.dev"
+      resourceId={Astro.props.resourceId}
+    />
+  )}
   {Astro.props.commentsDisplay && (
     <Discussion
       discourseUrl={Astro.props.topicUrl ? new URL(Astro.props.topicUrl).origin : undefined}
@@ -43,12 +49,6 @@ const formattedDate = new Intl.DateTimeFormat("en", {
       sourceUrl={Astro.url.href}
       topicId={Astro.props.topicId}
       topicUrl={Astro.props.topicUrl}
-    />
-  )}
-  {Astro.props.fromDiscourse && Astro.props.resourceId && (
-    <FromDiscourse
-      discourseUrl="https://bridge.demo.discussionbridge.dev"
-      resourceId={Astro.props.resourceId}
     />
   )}
 </StarlightPage>
