@@ -162,7 +162,7 @@ test("the Discourse publisher materializes one native Astro page", async () => {
 
   assert.match(page, /discussionbridgeNativePublication: true/);
   assert.match(page, /discussionbridgeResourceId: f01cba5f-73a8-423b-b156-25b39ef2ba9b/);
-  assert.match(page, /discussionbridgeSourceRevision: post:149:version:1/);
+  assert.match(page, /discussionbridgeSourceRevision: post:149:version:2/);
   assert.match(page, /discourseTopicId: 53/);
   assert.match(page, /discussionCommentsDisplay: fullInteractive/);
   assert.match(page, /The Bridge publishes everywhere/);
