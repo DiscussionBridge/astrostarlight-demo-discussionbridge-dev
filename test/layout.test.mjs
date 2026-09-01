@@ -59,6 +59,7 @@ test("the public consumer advertises all three intentional comments modes", asyn
     "authored",
     "rich-content",
     "forum-roadmap",
+    "bridge-publisher",
   ]) {
     assert.match(config, new RegExp(`/comments/${route}/`));
   }
@@ -101,7 +102,7 @@ test("the Astro Alpha profile binds distinct To records and one server-rendered 
 
   assert.equal(
     packageJson.dependencies["astro-discussion-bridge"],
-    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260831.4.tgz",
+    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260901.1.tgz",
   );
   assert.match(toPage, /discussionbridgeResourceId: "[0-9a-f-]{36}"/);
   assert.match(toPage, /discourseTopicId: "[1-9][0-9]*"/);
@@ -151,6 +152,21 @@ test("standalone full comments can upgrade through the exact existing topic", as
     adoptionPage,
     /discourseTopicUrl: "https:\/\/bridge\.demo\.discussionbridge\.dev\/t\/standalone-to-bridge-upgrade-discussionbridge-for-astro\/18"/,
   );
+});
+
+test("the Discourse publisher materializes one native Astro page", async () => {
+  const page = await readFile(
+    new URL("../src/content/comments/bridge-publisher.md", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(page, /discussionbridgeNativePublication: true/);
+  assert.match(page, /discussionbridgeResourceId: f01cba5f-73a8-423b-b156-25b39ef2ba9b/);
+  assert.match(page, /discussionbridgeSourceRevision: post:149:version:1/);
+  assert.match(page, /discourseTopicId: 53/);
+  assert.match(page, /discussionCommentsDisplay: fullInteractive/);
+  assert.match(page, /The Bridge publishes everywhere/);
+  assert.doesNotMatch(page, /DISCUSSIONBRIDGE_CONNECTION_SECRET|X-DiscussionBridge-Secret/);
 });
 
 test("the authored demo supplies stable platform identities and one primary author", async () => {

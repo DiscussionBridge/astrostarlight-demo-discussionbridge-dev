@@ -38,6 +38,7 @@ export default defineConfig({
                 { label: "Source authorship", link: "/comments/authored/" },
                 { label: "Rich content", link: "/comments/rich-content/" },
                 { label: "From Discourse", link: "/comments/forum-roadmap/" },
+                { label: "The Bridge publishes", link: "/comments/bridge-publisher/" },
               ],
             },
           ],

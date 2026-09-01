@@ -23,6 +23,8 @@ const companionTopicFields = z.object({
   primaryAuthor: z.string().min(1).max(255).optional(),
   discussionbridgeExternalId: z.string().regex(/^astro-page:[0-9a-f]{64}$/).optional(),
   discussionbridgeResourceId: z.string().uuid().optional(),
+  discussionbridgeNativePublication: z.boolean().optional(),
+  discussionbridgeSourceRevision: z.string().regex(/^post:[1-9][0-9]*:version:[1-9][0-9]*$/).optional(),
   discourseTopicId: z.union([z.string(), z.number()]).optional(),
   discourseTopicUrl: z.string().url().optional(),
   discussionCommentsDisplay: z.enum(["simple", "full", "fullInteractive"]).optional(),
