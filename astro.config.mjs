@@ -32,6 +32,8 @@ export default defineConfig({
                 { label: "Choose a mode", link: "/comments/" },
                 { label: "Simple comments", link: "/comments/simple/" },
                 { label: "Full — Discourse Core", link: "/comments/full/" },
+                { label: "Shared Simple", link: "/comments/shared-simple/" },
+                { label: "Shared Full", link: "/comments/shared-full/" },
                 { label: "Standalone → The Bridge", link: "/comments/standalone-upgrade/" },
                 { label: "FullInteractive", link: "/comments/full-interactive/" },
                 { label: "Plugin-controlled", link: "/comments/plugin-bridge/" },
@@ -47,6 +49,7 @@ export default defineConfig({
           label: "DiscussionBridge",
           items: [
             { label: "Demo hub", link: "https://demo.discussionbridge.dev/" },
+            { label: "Publisher matrix", link: "https://demo.discussionbridge.dev/discourse/" },
             { label: "DiscussionBridge.dev", link: "https://discussionbridge.dev/" },
           ],
         },

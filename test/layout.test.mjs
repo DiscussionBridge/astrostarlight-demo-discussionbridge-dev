@@ -53,6 +53,8 @@ test("the public consumer advertises all three intentional comments modes", asyn
   for (const route of [
     "simple",
     "full",
+    "shared-simple",
+    "shared-full",
     "standalone-upgrade",
     "full-interactive",
     "plugin-bridge",
@@ -63,6 +65,16 @@ test("the public consumer advertises all three intentional comments modes", asyn
   ]) {
     assert.match(config, new RegExp(`/comments/${route}/`));
   }
+});
+
+test("shared presentation pages bind the exact Bridge-wide topics", async () => {
+  const simple = await readFile(new URL("../src/content/comments/shared-simple.md", import.meta.url), "utf8");
+  const full = await readFile(new URL("../src/content/comments/shared-full.md", import.meta.url), "utf8");
+  assert.match(simple, /discussionCommentsDisplay: "simple"/);
+  assert.match(simple, /discourseTopicId: 54/);
+  assert.match(full, /discussionCommentsDisplay: "full"/);
+  assert.match(full, /discourseTopicId: 56/);
+  assert.doesNotMatch(`${simple}\n${full}`, /Connection-Secret|dbc_[0-9a-f]+/u);
 });
 
 test("the Astro rich-content proof renders portable headings, Mermaid, math and media", async () => {
