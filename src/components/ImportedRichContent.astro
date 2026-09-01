@@ -2,7 +2,9 @@
   import katex from "katex";
   import mermaid from "mermaid";
 
-  const roots = Array.from(document.querySelectorAll<HTMLElement>(".discussionbridge-record"));
+  const roots = Array.from(
+    document.querySelectorAll<HTMLElement>(".discussionbridge-record, main article"),
+  );
 
   for (const root of roots) {
     const diagrams = Array.from(
@@ -68,3 +70,19 @@
     }
   }
 </script>
+
+<style is:global>
+  .discussionbridge-mermaid,
+  .mermaid {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .discussionbridge-mermaid svg,
+  .mermaid svg {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+</style>

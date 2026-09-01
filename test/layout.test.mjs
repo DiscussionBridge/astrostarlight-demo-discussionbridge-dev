@@ -88,6 +88,8 @@ test("the Astro rich-content proof renders portable headings, Mermaid, math and 
   assert.match(markdown, /discourseTopicId: "[1-9][0-9]*"/);
   assert.match(importedRenderer, /code\.lang-mermaid/);
   assert.match(importedRenderer, /mermaid\.run/);
+  assert.match(importedRenderer, /\.discussionbridge-record, main article/);
+  assert.match(importedRenderer, /max-width: 100%/);
   assert.match(importedRenderer, /katex\.render/);
   assert.match(importedRenderer, /querySelectorAll<HTMLParagraphElement>\("p"\)/);
   assert.ok(importedRenderer.includes("\\[math\\]"));
