@@ -6,15 +6,15 @@ This repository owns the Astro and Starlight DiscussionBridge demo. It builds
 and deploys independently as a Cloudflare Worker with static assets.
 
 The pinned adapter artifact is
-`vendor/astro-discussion-bridge-0.1.0-alpha.20260831.1.tgz`. It contains 21
-members, is 23,107 bytes, and its SHA-256 is
-`6695e65009e97972512e9348b6881ee4230de8ac8aaf075c0d06f1780a6168d3`.
+`vendor/astro-discussion-bridge-0.1.0-alpha.20260831.2.tgz`. It contains 25
+members, is 29,242 bytes, and its SHA-256 is
+`5f5d90bc8e4bc35da73a5baa0142d0739d16ea65f2c5f0d27c0b1301b7b4e0f4`.
 It supports plugin-free `simple` and `full` comments, receiver-backed
 `fullInteractive`, safe adoption of a canonical Discourse Core embed, source
-authorship, and authenticated From Discourse presentation. Simple mode fetches
-public replies in bounded batches, shows five initially, and discloses up to 50
-through a native Show more control. Publication and release acceptance remain
-separate gates.
+authorship, and authenticated From Discourse presentation. Simple mode keeps a
+generated fallback and refreshes public replies at page load without cookies or
+credentials; it shows five initially and discloses up to 50 through a native
+Show more control. Publication and release acceptance remain separate gates.
 
 ```powershell
 npm ci
