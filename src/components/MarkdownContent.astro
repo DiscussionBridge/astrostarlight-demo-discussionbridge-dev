@@ -1,6 +1,7 @@
 ---
 import DefaultMarkdownContent from "@astrojs/starlight/components/MarkdownContent.astro";
 import Discussion from "astro-discussion-bridge/Discussion.astro";
+import ImportedRichContent from "./ImportedRichContent.astro";
 import "katex/dist/katex.min.css";
 
 const entry = Astro.locals.starlightRoute.entry;
@@ -20,3 +21,4 @@ const topicUrl = entry.data.discussionUrl ?? entry.data.discourseTopicUrl;
     topicUrl={topicUrl}
   />
 )}
+<ImportedRichContent />

@@ -2,6 +2,7 @@
   import katex from "katex";
   import mermaid from "mermaid";
 
+  async function renderImportedRichContent() {
   const roots = Array.from(
     document.querySelectorAll<HTMLElement>(".discussionbridge-record, main article"),
   );
@@ -69,6 +70,10 @@
       node.replaceWith(fragment);
     }
   }
+  }
+
+  document.addEventListener("astro:page-load", renderImportedRichContent);
+  await renderImportedRichContent();
 </script>
 
 <style is:global>

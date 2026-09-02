@@ -83,6 +83,10 @@ test("the Astro rich-content proof renders portable headings, Mermaid, math and 
     new URL("../src/components/ImportedRichContent.astro", import.meta.url),
     "utf8",
   );
+  const markdownLayout = await readFile(
+    new URL("../src/components/MarkdownContent.astro", import.meta.url),
+    "utf8",
+  );
   const markdown = await readFile(
     new URL("../src/content/comments/rich-content.md", import.meta.url),
     "utf8",
@@ -100,11 +104,15 @@ test("the Astro rich-content proof renders portable headings, Mermaid, math and 
   assert.match(markdown, /discourseTopicId: "[1-9][0-9]*"/);
   assert.match(importedRenderer, /code\.lang-mermaid/);
   assert.match(importedRenderer, /mermaid\.run/);
+  assert.match(importedRenderer, /astro:page-load/);
+  assert.match(importedRenderer, /renderImportedRichContent/);
   assert.match(importedRenderer, /\.discussionbridge-record, main article/);
   assert.match(importedRenderer, /max-width: 100%/);
   assert.match(importedRenderer, /katex\.render/);
   assert.match(importedRenderer, /querySelectorAll<HTMLParagraphElement>\("p"\)/);
   assert.ok(importedRenderer.includes("\\[math\\]"));
+  assert.match(markdownLayout, /import ImportedRichContent from "\.\/ImportedRichContent\.astro"/);
+  assert.match(markdownLayout, /<ImportedRichContent \/>/);
 });
 
 test("the Astro Alpha profile binds distinct To records and one server-rendered From record", async () => {
