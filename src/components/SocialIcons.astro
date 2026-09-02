@@ -3,17 +3,20 @@ import config from "virtual:starlight/user-config";
 import { Icon } from "@astrojs/starlight/components";
 
 const links = config.social || [];
+const discoursePath = "M12.102 0C5.5 0 .13 5.25 0 11.78L.007 24l12.097-.01C18.686 23.935 24 18.586 24 11.995S18.686.056 12.102 0ZM12 18.857a6.78 6.78 0 0 1-2.955-.666l-4.304 1.095 1.227-4.018A6.86 6.86 0 1 1 12 18.857Z";
 ---
 
 {
   links.length > 0 && links.map(({ label, href, icon }) => (
     <a href={href} rel="me" class="sl-flex">
       <span class="sr-only">{label}</span>
-      <Icon name={icon} />
+      {icon === "discourse"
+        ? <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d={discoursePath} /></svg>
+        : <Icon name={icon} />}
     </a>
   ))
 }
-<a href="#" class="sl-flex" aria-label="DiscussionBridge on X" title="DiscussionBridge on X (planned)">
+<a href="https://x.com/DiscussBridge" rel="me" class="sl-flex" aria-label="DiscussionBridge on X" title="DiscussionBridge on X">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.214-6.817-5.967 6.817H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" /></svg>
 </a>
 

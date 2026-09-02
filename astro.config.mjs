@@ -23,6 +23,11 @@ export default defineConfig({
       },
       social: [
         {
+          icon: "github",
+          label: "DiscussionBridge on GitHub",
+          href: "https://github.com/DiscussionBridge",
+        },
+        {
           icon: "discourse",
           label: "DiscussionBridge community forum",
           href: "https://forum.discussionbridge.dev/",
