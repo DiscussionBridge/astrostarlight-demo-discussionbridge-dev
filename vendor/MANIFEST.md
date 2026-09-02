@@ -2,13 +2,13 @@
 
 | File | Role | SHA-256 | Length |
 | --- | --- | --- | ---: |
-| `astro-discussion-bridge-0.1.0-alpha.20260901.3.tgz` | Live-refreshing credential-free Simple comments with forum-controlled Discourse attribution and a generated fallback; standalone Full comments; optional Bridge adoption; two-direction Bridge Records; source authorship; and explicitly authorized native materialization of Discourse publications | `a2c2925f1da7f70c95364f8e35d820c5ed08731e7d9c45bbe637cc5cb2b3b182` | 38913 |
+| `astro-discussion-bridge-0.1.0-alpha.20260902.2.tgz` | Live-refreshing credential-free Simple comments with forum-controlled Discourse attribution and a generated fallback; standalone Full comments; optional Bridge adoption; two-direction Bridge Records; source authorship; and explicitly authorized native materialization of Discourse publications | `7e40e93047317da6683f8a0db459b2b457c97692cce85b389171b87ba7f9cdbf` | 39112 |
 
-The archive contains 33 members (141,953 unpacked bytes), has npm SHA-1
-`5464739640ab89d35138a1e81d7a0b4517a76fd7`, and npm integrity
-`sha512-UZs8SeGqPHEhVFhs62T9mVnHdC/iiu/tf7aayvnNxbd3DWQjSwI/ThPPbQcCtYLXT2APTW6lC8qsgieZUve2pA==`.
+The archive contains 36 members (142,362 unpacked bytes), has npm SHA-1
+`2d27464572a4fc0d227f17a086d5d529106e6a6b`, and npm integrity
+`sha512-EDwY0Vh5uenK2opmF+ZrLf6xOCFLbp71A1RoEuKI6ztTZvAzJLgK7w+7P6wU2Ab1GpG45ylgKgZNAKDkE05Clw==`.
 
 It is generated from immutable reduced adapter source commit
-`1ef58edb87ef8c0aefb531e88afd01f21bc4d1b6` (tree
-`5a55f116cc388223c6eeebb9842f3026db6715aa`). This manifest does not claim
+`236dda0b078673c1bb98ae591886e50c3eec3349` (tree
+`c873cce5a33db2afa115137527848143f1e48cf9`). This manifest does not claim
 publication or release acceptance.
