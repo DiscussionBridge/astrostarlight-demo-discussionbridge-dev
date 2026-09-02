@@ -1,0 +1,26 @@
+---
+import config from "virtual:starlight/user-config";
+import { Icon } from "@astrojs/starlight/components";
+
+const links = config.social || [];
+---
+
+{
+  links.length > 0 && links.map(({ label, href, icon }) => (
+    <a href={href} rel="me" class="sl-flex">
+      <span class="sr-only">{label}</span>
+      <Icon name={icon} />
+    </a>
+  ))
+}
+<a href="#" class="sl-flex" aria-label="DiscussionBridge on X" title="DiscussionBridge on X (planned)">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.214-6.817-5.967 6.817H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" /></svg>
+</a>
+
+<style>
+  @layer starlight.core {
+    a { color: var(--sl-color-text-accent); padding: 0.5em; margin: -0.5em; }
+    a:hover { color: var(--sl-color-white); }
+    svg { width: 1em; height: 1em; }
+  }
+</style>

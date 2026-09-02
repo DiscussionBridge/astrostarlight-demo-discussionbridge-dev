@@ -18,6 +18,7 @@ export default defineConfig({
     starlight({
       title: "DiscussionBridge for Astro",
       components: {
+        SocialIcons: "./src/components/SocialIcons.astro",
         MarkdownContent: "./src/components/MarkdownContent.astro",
       },
       social: [
