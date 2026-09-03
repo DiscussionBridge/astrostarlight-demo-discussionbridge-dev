@@ -2,7 +2,7 @@
 
 | File | Role | SHA-256 | Length |
 | --- | --- | --- | ---: |
-| `astro-discussion-bridge-0.1.0-alpha.20260903.5.tgz` | Live-refreshing credential-free Simple comments with forum-controlled Discourse attribution and a generated fallback; standalone Full comments; optional Bridge adoption; two-direction Bridge Records; source authorship; two-phase durable publication-operation state; and explicitly authorized native materialization of Discourse publications | `cb7fe059ee91dd6fab79bafca938d942a8f8a28811f721511cf9de8d75935824` | 42834 |
+| `astro-discussion-bridge-0.1.0-alpha.20260903.6.tgz` | Live-refreshing credential-free Simple comments with forum-controlled Discourse attribution and a generated fallback; standalone Full comments; optional Bridge adoption; two-direction Bridge Records; source authorship; serialized two-phase durable publication-operation state; and explicitly authorized native materialization of Discourse publications | `ae0cc18fafd1d074793c92b0ed6f7db9cf6a53a1b0f54adfa85db1f93170f059` | 43077 |
 
 The archive contains 39 members (158,376 unpacked bytes), has npm SHA-1
 `2d78102be5481b51ae3bcf1f097a670fe9ff93ab`, and npm integrity

@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/starlight": "^0.41.2",
     "astro": "^7.0.4",
-    "astro-discussion-bridge": "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260903.5.tgz",
+    "astro-discussion-bridge": "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260903.6.tgz",
     "astro-mermaid": "^2.1.0",
     "katex": "^0.18.4",
     "mermaid": "^11.17.2",
