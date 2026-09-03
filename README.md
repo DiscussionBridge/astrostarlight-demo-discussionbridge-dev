@@ -6,9 +6,9 @@ This repository owns the Astro and Starlight DiscussionBridge demo. It builds
 and deploys independently as a Cloudflare Worker with static assets.
 
 The pinned adapter artifact is
-`vendor/astro-discussion-bridge-0.1.0-alpha.20260902.4.tgz`. It contains 39
+`vendor/astro-discussion-bridge-0.1.0-alpha.20260903.5.tgz`. It contains 39
 members, is 42,672 bytes, and its SHA-256 is
-`dc7d99796223915ecc13b6df11287416adca01b046ec62108bb260b67b5a0cc6`.
+`cb7fe059ee91dd6fab79bafca938d942a8f8a28811f721511cf9de8d75935824`.
 It supports plugin-free `simple` and `full` comments, receiver-backed
 `fullInteractive`, safe adoption of a canonical Discourse Core embed, source
 authorship, authenticated From Discourse presentation, and explicitly

@@ -6,71 +6,71 @@
       "externalId": "astro-page:3ec46813b4f887022bd67753023be909b81cca35307a92983b41c28003c31510",
       "canonicalUrl": "https://astrostarlight.demo.discussionbridge.dev/comments/authored/",
       "correlationId": "554ae46f-a162-4e21-bb07-58fa60fb1670",
-      "attempts": 2,
+      "attempts": 4,
       "outcome": "resolved",
       "retryable": false,
       "reconciliationRequired": false,
-      "lastAttemptAt": "2026-09-03T06:09:50.316Z",
+      "lastAttemptAt": "2026-09-03T07:13:13.470Z",
       "resourceId": "502a03c4-1e71-41e4-8639-6fd2364f275b",
       "topicId": 17,
       "topicUrl": "https://bridge.demo.discussionbridge.dev/t/platform-authorship-mapping/17",
-      "lastSuccessAt": "2026-09-03T06:09:50.523Z"
+      "lastSuccessAt": "2026-09-03T07:13:13.828Z"
     },
     "astro-page:76bd40ec442558e24fd71a83246b89b004172d799c2e96e3ec8c6f9253ce590c": {
       "externalId": "astro-page:76bd40ec442558e24fd71a83246b89b004172d799c2e96e3ec8c6f9253ce590c",
       "canonicalUrl": "https://astrostarlight.demo.discussionbridge.dev/comments/full-interactive/",
       "correlationId": "5c44aa16-ab7d-453c-9152-ca61c3ec3519",
-      "attempts": 2,
+      "attempts": 4,
       "outcome": "resolved",
       "retryable": false,
       "reconciliationRequired": false,
-      "lastAttemptAt": "2026-09-03T06:09:50.565Z",
+      "lastAttemptAt": "2026-09-03T07:13:13.863Z",
       "resourceId": "f456b83d-9ab7-40ed-a226-1307264b9a31",
       "topicId": 16,
       "topicUrl": "https://bridge.demo.discussionbridge.dev/t/full-interactive-comments-mode/16",
-      "lastSuccessAt": "2026-09-03T06:09:50.659Z"
+      "lastSuccessAt": "2026-09-03T07:13:14.023Z"
     },
     "astro-page:fd210e1ad0958a5713304ba9c460b9933004fa42d70ccaf28beedaaa8f75a792": {
       "externalId": "astro-page:fd210e1ad0958a5713304ba9c460b9933004fa42d70ccaf28beedaaa8f75a792",
       "canonicalUrl": "https://astrostarlight.demo.discussionbridge.dev/comments/plugin-bridge/",
       "correlationId": "15828d2e-a3f8-44d8-a8cf-23f0a043baf8",
-      "attempts": 2,
+      "attempts": 4,
       "outcome": "resolved",
       "retryable": false,
       "reconciliationRequired": false,
-      "lastAttemptAt": "2026-09-03T06:09:50.697Z",
+      "lastAttemptAt": "2026-09-03T07:13:14.052Z",
       "resourceId": "b145249d-9f3e-439d-b33f-c03ab123eb2e",
       "topicId": 15,
       "topicUrl": "https://bridge.demo.discussionbridge.dev/t/plugin-controlled-bridge-comments/15",
-      "lastSuccessAt": "2026-09-03T06:09:50.848Z"
+      "lastSuccessAt": "2026-09-03T07:13:14.261Z"
     },
     "astro-page:960b3d4df6dc744e9463b13661e74e010f21af541ad81457ac975f79054fa38c": {
       "externalId": "astro-page:960b3d4df6dc744e9463b13661e74e010f21af541ad81457ac975f79054fa38c",
       "canonicalUrl": "https://astrostarlight.demo.discussionbridge.dev/comments/rich-content/",
       "correlationId": "85a31a87-50d2-4b1a-ab5a-20d1c22b96fb",
-      "attempts": 2,
+      "attempts": 4,
       "outcome": "resolved",
       "retryable": false,
       "reconciliationRequired": false,
-      "lastAttemptAt": "2026-09-03T06:09:50.889Z",
+      "lastAttemptAt": "2026-09-03T07:13:14.294Z",
       "resourceId": "1c1a508b-c7fe-4de4-9bb8-9332e65a7917",
       "topicId": 26,
       "topicUrl": "https://bridge.demo.discussionbridge.dev/t/portable-rich-content-from-astro/26",
-      "lastSuccessAt": "2026-09-03T06:09:50.989Z"
+      "lastSuccessAt": "2026-09-03T07:13:14.402Z"
     },
     "astro-page:3664fb85513adbb8b7646913e17d2fd619e569fccbb47ce294b7f4d9c40afba8": {
       "externalId": "astro-page:3664fb85513adbb8b7646913e17d2fd619e569fccbb47ce294b7f4d9c40afba8",
       "canonicalUrl": "https://astrostarlight.demo.discussionbridge.dev/comments/standalone-upgrade/",
       "correlationId": "1533ef6b-ff26-48dc-9437-ef0d6e963057",
-      "attempts": 2,
+      "attempts": 4,
       "outcome": "resolved",
       "retryable": false,
       "reconciliationRequired": false,
-      "lastAttemptAt": "2026-09-03T06:09:51.021Z",
+      "lastAttemptAt": "2026-09-03T07:13:14.436Z",
       "resourceId": "858d81eb-65f2-424a-a8a0-cb9c32fc8481",
       "topicId": 18,
       "topicUrl": "https://bridge.demo.discussionbridge.dev/t/standalone-to-bridge-upgrade-discussionbridge-for-astro/18",
-      "lastSuccessAt": "2026-09-03T06:09:51.156Z"
+      "lastSuccessAt": "2026-09-03T07:13:14.568Z"
     }
   }
 }
