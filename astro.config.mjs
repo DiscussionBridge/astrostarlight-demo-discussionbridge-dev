@@ -104,6 +104,7 @@ export default defineConfig({
       },
       publishOnBuild: {
         enabled: connectBridge,
+        stateFile: ".discussionbridge/astro-publication-state.json",
         docsDir: "src/content/comments",
         routeBase: "comments",
         lane: "astro-demo",
