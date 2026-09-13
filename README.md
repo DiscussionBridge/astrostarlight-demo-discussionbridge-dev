@@ -10,7 +10,7 @@ The pinned adapter artifact is
 members, is 42,672 bytes, and its SHA-256 is
 `cb7fe059ee91dd6fab79bafca938d942a8f8a28811f721511cf9de8d75935824`.
 It supports plugin-free `simple` and `full` comments, receiver-backed
-`fullInteractive`, safe adoption of a canonical Discourse Core embed, source
+Interactive mode, safe adoption of a canonical Discourse Core embed, source
 authorship, authenticated From Discourse presentation, and explicitly
 authorized materialization of a forum-owned publication as a native Astro
 content page. Simple mode keeps a

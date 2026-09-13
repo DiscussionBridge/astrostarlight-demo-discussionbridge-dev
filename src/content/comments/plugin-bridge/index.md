@@ -2,7 +2,7 @@
 title: "Plugin-Controlled Bridge Comments"
 description: "An end-to-end demonstration of forum-authorized companion-topic creation on The Bridge."
 date: "2026-08-30"
-discussionCommentsDisplay: "fullInteractive"
+discussionCommentsDisplay: "interactive"
 discussionSourceMode: "astro-managed"
 discussionSync: true
 discussionUnlisted: true

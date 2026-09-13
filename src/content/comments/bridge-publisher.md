@@ -2,7 +2,7 @@
 title: The Bridge publishes everywhere
 description: Published from The Bridge by DiscussionBridge.
 date: "2026-09-01T08:53:17.221044Z"
-discussionCommentsDisplay: fullInteractive
+discussionCommentsDisplay: interactive
 discussionSync: false
 discussionbridgeNativePublication: true
 discussionbridgeResourceId: f01cba5f-73a8-423b-b156-25b39ef2ba9b
@@ -28,7 +28,7 @@ discussionbridgeSourceRevision: post:149:version:2
   B --&gt; H[Hugo]
 </code></pre>
 <h2><a href="#p-149-portable-presentation-forum-owned-discussion-3"></a>Portable presentation, forum-owned discussion</h2>
-<p>Destination themes control typography and layout. DiscussionBridge transports bounded cooked content plus exact provenance. Replies remain on The Bridge and can appear through Simple, Full, or fullInteractive discussion modes without transferring moderation or login authority to a CMS.</p>
+<p>Destination themes control typography and layout. DiscussionBridge transports bounded cooked content plus exact provenance. Replies remain on The Bridge and can appear through Simple, Full, or Interactive discussion modes without transferring moderation or login authority to a CMS.</p>
 <p>This is the flagship workflow in action: <strong>publish once from The Bridge, materialize natively everywhere, and keep the discussion free.</strong></p>
 <h2><a href="#p-149-revision-propagation-4"></a>Revision propagation</h2>
 <p>This controlled update proves that one Discourse revision updates all seven native platform records in place without changing their destination identity.</p>

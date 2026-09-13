@@ -2,7 +2,7 @@
 title: "Standalone-to-Bridge Upgrade"
 description: "Begin with plugin-free Discourse comments, then adopt the same discussion into The Bridge without creating a duplicate topic."
 date: "2026-08-30"
-discussionCommentsDisplay: "fullInteractive"
+discussionCommentsDisplay: "interactive"
 discussionSync: true
 discourseTopicId: "18"
 discourseTopicUrl: "https://bridge.demo.discussionbridge.dev/t/standalone-to-bridge-upgrade-discussionbridge-for-astro/18"
@@ -19,7 +19,7 @@ is required.
 
 ## Add The Bridge later
 
-The same page can later enable the receiver-backed `fullInteractive` mode. The
+The same page can later enable the receiver-backed `interactive` mode. The
 Astro adapter presents the existing topic identity, and The Bridge adopts it
 only when Discourse Core independently confirms that this exact canonical page
 already owns the topic.
@@ -37,7 +37,7 @@ This topic began as a standard Discourse Core embed. With Discourse's default
 **Show more…** control for the complete rendered Astro page. Operators who
 disable that setting see the complete imported article immediately.
 
-After adoption, `fullInteractive` deliberately omits the forum first post from
+After adoption, Interactive mode deliberately omits the forum first post from
 the comments frame because the source article is already visible above it. The
 direct forum topic retains the imported article and its Discourse-controlled
 truncate-or-show-all presentation.

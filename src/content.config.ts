@@ -27,7 +27,7 @@ const companionTopicFields = z.object({
   discussionbridgeSourceRevision: z.string().regex(/^post:[1-9][0-9]*:version:[1-9][0-9]*$/).optional(),
   discourseTopicId: z.union([z.string(), z.number()]).optional(),
   discourseTopicUrl: z.string().url().optional(),
-  discussionCommentsDisplay: z.enum(["simple", "full", "fullInteractive"]).optional(),
+  discussionCommentsDisplay: z.enum(["simple", "full", "interactive", "fullInteractive"]).optional(),
   discussionSourceAuthorUsername: z.string().optional(),
   discussionSourceAuthorName: z.string().optional(),
   discussionSourceCategoryId: z.number().int().positive().optional(),

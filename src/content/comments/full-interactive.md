@@ -1,8 +1,8 @@
 ---
-title: "Full Interactive Comments Mode"
+title: "Interactive Comments Mode"
 description: "The plugin-backed, mapped comments-only Discourse experience."
 date: "2026-08-29"
-discussionCommentsDisplay: "fullInteractive"
+discussionCommentsDisplay: "interactive"
 discussionSourceMode: "astro-managed"
 discussionSync: true
 discussionUnlisted: true
@@ -12,9 +12,9 @@ discourseTopicId: "16"
 discourseTopicUrl: "https://bridge.demo.discussionbridge.dev/t/full-interactive-comments-mode/16"
 ---
 
-## Full interactive mode
+## Interactive mode
 
-This page uses `discussionCommentsDisplay: "fullInteractive"`.
+This page uses `discussionCommentsDisplay: "interactive"`.
 
 It hands the embedded area back to Discourse as a full app iframe. Logged-in
 users can use Discourse-native interactions such as reply, like, quote, and

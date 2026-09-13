@@ -40,9 +40,9 @@ test("the public consumer advertises all three intentional comments modes", asyn
   const index = await readFile(new URL("../src/pages/comments/index.astro", import.meta.url), "utf8");
   const config = await readFile(new URL("../astro.config.mjs", import.meta.url), "utf8");
 
-  assert.match(schema, /discussionCommentsDisplay: z\.enum\(\["simple", "full", "fullInteractive"\]\)/);
+  assert.match(schema, /discussionCommentsDisplay: z\.enum\(\["simple", "full", "interactive", "fullInteractive"\]\)/);
   assert.doesNotMatch(schema, /discussionEmbedUrl/);
-  assert.match(index, /simple.*full.*fullInteractive/s);
+  assert.match(index, /Simple.*Full.*Interactive/s);
   const simple = await readFile(new URL("../src/content/comments/simple.md", import.meta.url), "utf8");
   const full = await readFile(new URL("../src/content/comments/full.md", import.meta.url), "utf8");
   assert.match(simple, /discussionCommentsDisplay: "simple"/);
@@ -98,7 +98,7 @@ test("the Astro rich-content proof renders portable headings, Mermaid, math and 
   assert.match(markdown, /```mermaid/);
   assert.match(markdown, /\$E = mc\^2\$/);
   assert.match(markdown, /bridge-content-flow\.svg/);
-  assert.match(markdown, /discussionCommentsDisplay: "fullInteractive"/);
+  assert.match(markdown, /discussionCommentsDisplay: "interactive"/);
   assert.match(markdown, /discussionSync: true/);
   assert.match(markdown, /discussionbridgeResourceId: "[0-9a-f-]{36}"/);
   assert.match(markdown, /discourseTopicId: "[1-9][0-9]*"/);
@@ -124,7 +124,7 @@ test("the Astro Alpha profile binds distinct To records and one server-rendered 
 
   assert.equal(
     packageJson.dependencies["astro-discussion-bridge"],
-    "file:vendor/astro-discussion-bridge-0.1.0-alpha.20260903.7.tgz",
+    "file:vendor/astro-discussion-bridge-0.2.0-alpha.19.tgz",
   );
   assert.match(toPage, /discussionbridgeResourceId: "[0-9a-f-]{36}"/);
   assert.match(toPage, /discourseTopicId: "[1-9][0-9]*"/);
@@ -163,7 +163,7 @@ test("standalone full comments can upgrade through the exact existing topic", as
   assert.doesNotMatch(markdownLayout, /discussionCommentsDisplay && topicUrl/);
   assert.match(laneLayout, /sourceUrl=\{Astro\.url\.href\}/);
   assert.match(markdownLayout, /sourceUrl=\{Astro\.url\.href\}/);
-  assert.match(adoptionPage, /discussionCommentsDisplay: "fullInteractive"/);
+  assert.match(adoptionPage, /discussionCommentsDisplay: "interactive"/);
   assert.match(adoptionPage, /discussionSync: true/);
   assert.match(adoptionPage, /embed_truncate/);
   assert.match(adoptionPage, /Show more…/);
@@ -186,7 +186,7 @@ test("the Discourse publisher materializes one native Astro page", async () => {
   assert.match(page, /discussionbridgeResourceId: f01cba5f-73a8-423b-b156-25b39ef2ba9b/);
   assert.match(page, /discussionbridgeSourceRevision: post:149:version:2/);
   assert.match(page, /discourseTopicId: 53/);
-  assert.match(page, /discussionCommentsDisplay: fullInteractive/);
+  assert.match(page, /discussionCommentsDisplay: interactive/);
   assert.match(page, /The Bridge publishes everywhere/);
   assert.doesNotMatch(page, /DISCUSSIONBRIDGE_CONNECTION_SECRET|X-DiscussionBridge-Secret/);
 });

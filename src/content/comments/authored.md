@@ -2,7 +2,7 @@
 title: "Platform Authorship Mapping"
 description: "Astro reports a primary author and coauthor while The Bridge controls the visible Discourse topic owner."
 date: "2026-08-30"
-discussionCommentsDisplay: "fullInteractive"
+discussionCommentsDisplay: "interactive"
 discussionSourceMode: "astro-managed"
 discussionSync: true
 discussionUnlisted: true

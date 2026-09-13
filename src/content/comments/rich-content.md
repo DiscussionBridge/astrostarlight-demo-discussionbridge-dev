@@ -2,7 +2,7 @@
 title: "Portable Rich Content from Astro"
 description: "Astro-authored headings, diagrams, mathematics and media carried into one durable discussion."
 date: "2026-08-30"
-discussionCommentsDisplay: "fullInteractive"
+discussionCommentsDisplay: "interactive"
 discussionSync: true
 discussionUnlisted: true
 discussionbridgeExternalId: "astro-page:960b3d4df6dc744e9463b13661e74e010f21af541ad81457ac975f79054fa38c"
