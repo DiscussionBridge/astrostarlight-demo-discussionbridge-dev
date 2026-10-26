@@ -6,9 +6,9 @@ This repository owns the Astro and Starlight DiscussionBridge demo. It builds
 and deploys independently as a Cloudflare Worker with static assets.
 
 The pinned adapter artifact is
-`vendor/astro-discussion-bridge-0.1.0-alpha.20260903.6.tgz`. It contains 39
-members, is 42,672 bytes, and its SHA-256 is
-`cb7fe059ee91dd6fab79bafca938d942a8f8a28811f721511cf9de8d75935824`.
+`vendor/astro-discussion-bridge-0.2.0-alpha.20.tgz`. It contains 43 members, is
+43,930 bytes, and its SHA-256 is
+`b63b62a40a1283d9b333f1a35c7b44da3976f029c8b2b9548ad2e0388d5f82f9`.
 It supports plugin-free `simple` and `full` comments, receiver-backed
 Interactive mode, safe adoption of a canonical Discourse Core embed, source
 authorship, authenticated From Discourse presentation, and explicitly
@@ -20,6 +20,15 @@ Show more control. When the forum enables its public Discourse attribution,
 Simple also shows the bundled official Discourse wordmark without coupling it
 to the independent DiscussionBridge credit. Publication and release acceptance
 remain separate gates.
+
+The Starlight head override preserves Starlight's native head output and adds
+the DiscussionBridge Google Analytics property `G-K9SYR7QENF` to every route.
+
+GitHub verifies installation, dependency audit, and source tests without
+receiving production credentials. The GitHub-connected Cloudflare Workers build
+owns the credentialed production build and deployment, with
+`DISCUSSIONBRIDGE_BRIDGE_CONNECT=1` and the server-only Connection ID and secret
+stored as protected build values.
 
 ```powershell
 npm ci

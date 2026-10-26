@@ -11,6 +11,39 @@ const stockContentFiles = [
   "src/content/releases/2_1.md",
 ];
 
+test("the Starlight head preserves native metadata and adds DiscussionBridge analytics", async () => {
+  const config = await readFile(new URL("../astro.config.mjs", import.meta.url), "utf8");
+  const head = await readFile(new URL("../src/components/Head.astro", import.meta.url), "utf8");
+  const analytics = await readFile(
+    new URL("../src/components/GoogleAnalytics.astro", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(config, /Head: "\.\/src\/components\/Head\.astro"/);
+  assert.match(config, /https:\/\/demo\.discussionbridge\.dev\/og\.png/);
+  assert.match(config, /summary_large_image/);
+  assert.match(head, /@astrojs\/starlight\/components\/Head\.astro/);
+  assert.match(head, /<StarlightHead \/>/);
+  assert.match(head, /<GoogleAnalytics \/>/);
+  assert.match(analytics, /G-K9SYR7QENF/);
+  assert.match(analytics, /googletagmanager\.com\/gtag\/js/);
+  assert.match(analytics, /gtag\("config", measurementId\)/);
+});
+
+test("GitHub source verification does not request production Connection credentials", async () => {
+  const workflow = await readFile(
+    new URL("../.github/workflows/verify.yml", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(workflow, /name: Verify Source/);
+  assert.match(workflow, /npm audit/);
+  assert.match(workflow, /npm test/);
+  assert.doesNotMatch(workflow, /DISCUSSIONBRIDGE_CONNECTION_/);
+  assert.doesNotMatch(workflow, /npm run build/);
+  assert.doesNotMatch(workflow, /npm run deploy/);
+});
+
 test("lane pages pass rendered Markdown headings to StarlightPage", async () => {
   const layout = await readFile(new URL("../src/layouts/LaneLayout.astro", import.meta.url), "utf8");
   assert.match(layout, /headings=\{Astro\.props\.headings\}/);

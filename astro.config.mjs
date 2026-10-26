@@ -17,7 +17,18 @@ export default defineConfig({
     mermaid({ enableLog: false }),
     starlight({
       title: "DiscussionBridge for Astro",
+      head: [
+        { tag: "meta", attrs: { property: "og:image", content: "https://demo.discussionbridge.dev/og.png" } },
+        { tag: "meta", attrs: { property: "og:image:width", content: "1200" } },
+        { tag: "meta", attrs: { property: "og:image:height", content: "630" } },
+        { tag: "meta", attrs: { property: "og:image:type", content: "image/png" } },
+        { tag: "meta", attrs: { property: "og:image:alt", content: "DiscussionBridge Demos — See the Bridge. Then cross it." } },
+        { tag: "meta", attrs: { name: "twitter:card", content: "summary_large_image" } },
+        { tag: "meta", attrs: { name: "twitter:image", content: "https://demo.discussionbridge.dev/og.png" } },
+        { tag: "meta", attrs: { name: "twitter:image:alt", content: "DiscussionBridge Demos — See the Bridge. Then cross it." } },
+      ],
       components: {
+        Head: "./src/components/Head.astro",
         SocialIcons: "./src/components/SocialIcons.astro",
         MarkdownContent: "./src/components/MarkdownContent.astro",
       },
