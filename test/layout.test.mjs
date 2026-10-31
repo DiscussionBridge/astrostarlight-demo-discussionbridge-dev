@@ -11,23 +11,26 @@ const stockContentFiles = [
   "src/content/releases/2_1.md",
 ];
 
-test("the Starlight head preserves native metadata and adds DiscussionBridge analytics", async () => {
+test("the Starlight head preserves native metadata while the Starlight plugin owns analytics", async () => {
   const config = await readFile(new URL("../astro.config.mjs", import.meta.url), "utf8");
   const head = await readFile(new URL("../src/components/Head.astro", import.meta.url), "utf8");
   const analytics = await readFile(
-    new URL("../src/components/GoogleAnalytics.astro", import.meta.url),
+    new URL("../analytics.config.mjs", import.meta.url),
     "utf8",
   );
 
+  assert.match(config, /plugins: \[starlightAnalytics\(analyticsOptions\)\]/);
   assert.match(config, /Head: "\.\/src\/components\/Head\.astro"/);
   assert.match(config, /https:\/\/demo\.discussionbridge\.dev\/og\.png/);
   assert.match(config, /summary_large_image/);
   assert.match(head, /@astrojs\/starlight\/components\/Head\.astro/);
   assert.match(head, /<StarlightHead \/>/);
-  assert.match(head, /<GoogleAnalytics \/>/);
+  assert.doesNotMatch(head, /GoogleAnalytics|googletagmanager|gtag\(/);
   assert.match(analytics, /G-K9SYR7QENF/);
-  assert.match(analytics, /googletagmanager\.com\/gtag\/js/);
-  assert.match(analytics, /gtag\("config", measurementId\)/);
+  assert.match(analytics, /siteId: '5'/);
+  assert.match(analytics, /HFEVBRGI/);
+  assert.match(analytics, /pa-20ZdU_sdR2mFxktHt8mlO/);
+  assert.match(analytics, /082e80a9-2fab-4df6-b4f0-c9c09ef9ab5c/);
 });
 
 test("GitHub source verification does not request production Connection credentials", async () => {

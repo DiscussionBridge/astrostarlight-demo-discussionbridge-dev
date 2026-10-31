@@ -1,3 +1,5 @@
+import { starlightAnalytics } from '@codeworkslabs/astro-analytics/starlight';
+import { analyticsOptions } from './analytics.config.mjs';
 import { defineConfig } from "astro/config";
 import mermaid from "astro-mermaid";
 import rehypeKatex from "rehype-katex";
@@ -16,6 +18,7 @@ export default defineConfig({
   integrations: [
     mermaid({ enableLog: false }),
     starlight({
+      plugins: [starlightAnalytics(analyticsOptions)],
       title: "DiscussionBridge for Astro",
       head: [
         { tag: "meta", attrs: { property: "og:image", content: "https://demo.discussionbridge.dev/og.png" } },
